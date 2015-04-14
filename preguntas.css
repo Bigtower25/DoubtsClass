@@ -1,0 +1,20 @@
+ul.list-inline{
+	font-size: 17px;
+	color: rgb(0,79,138);
+
+}
+blockquote {
+    display: block;
+	width:100%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    /*margin-left: 40px;*/
+    margin-right: 40px;
+}
+h3 a{
+	clear: both;
+	color: rgb(0,79,138);
+}
+.panel-title{
+	color: rgb(0,79,138);
+}

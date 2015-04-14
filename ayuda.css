@@ -1,0 +1,102 @@
+/*ayuda*/
+.item{
+    background: #333;    
+    text-align: center;
+    height: 420px !important;
+}
+.carousel{
+    position:relative;
+    margin-bottom:70px;
+}
+#carousel1{
+    top:10%;
+    bottom:auto;
+    right:10%;
+    left:10%
+}
+
+#logo_grande_sin_fondo{
+    height:100%;
+    width:100%;
+}
+
+#carousel1-h4a{
+    margin-top:5%;
+}
+
+#carousel1-h4b{
+    margin-top:5%;
+}
+
+#carousel2{
+    bottom:auto;
+    right:10%;
+    left:10%
+}
+
+#carousel2-table{
+    margin-left:25%;
+}
+
+
+#pregunta{
+  margin-top:5px;
+  margin-right:10px;
+}
+
+#respuesta{
+margin-top:10px;
+  margin-right:10px;
+}
+
+#aviso{
+    margin-top:10px;
+  margin-right:10px;
+}
+
+#carousel3{
+    bottom:auto;
+    right:10%;
+    left:10%
+}
+
+#carousel3-table{
+    margin-left:50px !important;
+}
+
+#exclamacion{
+    margin-top:30px !important;
+  margin-right:10px;
+}
+
+#tic{
+    margin-top:30px;
+  margin-right:10px;
+}
+
+#flecha{
+    margin-top:30px;
+  margin-right:10px;
+}
+
+#carousel4{
+    bottom:auto;
+    right:10%;
+    left:10%
+}
+
+#carousel4-table{
+    margin-top:5%;
+}
+
+#carousel4-tableb{
+    margin-top:5%;
+}
+
+#estrellas{
+    margin-left:25%;
+}
+
+#tag{
+    margin-right:10px;
+}

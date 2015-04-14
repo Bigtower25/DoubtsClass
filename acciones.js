@@ -1,0 +1,27 @@
+$(document).ready(
+	/*function(){
+		$('#panelRespuesta').hide();	
+	}*/
+	function(){
+		$('blockquote').hover(
+			function(){
+				$(this).hide(3000,
+				function(){
+				$(this).show(4000,
+				function(){});
+				}
+				);
+			});
+			/*function(){
+				$(this).show("slow"),
+			});*/
+	}
+);
+/*$('#botonResponder').click(
+	function(){
+		$(this).hide();
+	}
+	function(){
+		$('#panelRespuesta').show();
+	}		
+);*/	

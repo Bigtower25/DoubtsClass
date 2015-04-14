@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--[endif]-->
+	<meta charset="UTF-8">
+	<!--mobile first-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Preguntas más valoradas</title>
+	<!--cargar bootstrap desde CDN-->
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<!--cargar css basico encabezado y footer-->
+	<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/26653260/bars.css" media="all">
+	<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/64804488/login.css" media="all">
+	<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/26653260/preguntas.css" media="all">
+
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top" id="nav-small">
+        <div class="container-fluid">
+            <div class="navbar-header">
+				        <a class="navbar-brand" href="#">
+					        <img src="https://dl.dropboxusercontent.com/u/64804488/logo.jpg" alt="logo" width="100" height="64">
+				        </a>
+		    </div><!-- navbar-header-->
+             <ul class="nav navbar-nav brand-right" id="nav-small-right">
+		        <li class="dropdown">
+			        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			            <span class="caret" id="navbar-left-small-caret"></span>
+			        </a>
+                    <ul class="dropdown-menu" id="navbar-left-small-menu">
+                        <form class="navbar-form navbar-left" role="search">
+						    <div class="form-group">
+							    <input type="text" class="form-control" placeholder="Search">
+							</div>
+						</form>
+						<li>
+                            <a href="#" data-hover="dropdown" data-close-others="false">
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+			                    Filtros<span class="caret" id="navbar-search-filtros-caret"></span>
+			                </a>
+                            <ul class="dropdown-menu sub-menu">
+                                <li><a tabindex="1" href="#">
+                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                    Etiquetas</a>
+                                </li>
+                                <li><a tabindex="2" href="#">
+                                    <span class="glyphicon glyphicon-user"></span>
+												Usuarios</a>
+						        </li>
+                            </ul>
+                        </li> 
+                        <li class="divider"></li>
+                        <li class="dropdown">
+			                <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			                     Vistas<span class="caret"></span>
+			                </a>
+                            <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                        <li><a href="#">Preguntas</a></li>
+		                        <li><a href="#">Etiquetas</a></li>
+		                        <li><a href="#">Usuarios</a></li>
+		                        <li><a href="#">Sin respuesta</a></li>
+		                    </ul>
+		                </li>
+		                <li class="divider"></li>
+		                <li><a href="#">Realizar Pregunta</a></li>
+		                <li class="divider"></li>
+		                <li class="dropdown">
+		                <li>
+		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
+		                        <span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu" id="login-menu">
+					            <li>
+					                <form class="navbar-form navbar-left" role="email">
+								        <div class="form-group">
+									        <input type="text" class="form-control" placeholder="Email">
+								        </div>
+						            </form>
+					            </li>
+    					        <li>
+					                <form class="navbar-form navbar-left" role="password">
+								        <div class="form-group">
+									        <input type="text" class="form-control" placeholder="Contraseña">
+								        </div>
+						            </form>
+					            </li>
+					            <li>
+					                <button type="submit" class="btn btn-large btn-primary" id="login-signin">Sign in</button>
+    					        </li>
+				            </ul>
+		                </li>
+		                <li><a href="#">Registro</a></li>
+		            </ul>
+		        </li>
+		    </ul>
+        </div><!--container-fluid-->
+    </header>
+    
+	<header class="navbar navbar-inverse navbar-fixed-top" id="nav">
+		<div class="container-fluid">
+		    <ul class="nav navbar-nav navbar-left">
+		        <li><a href="#" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
+		    </ul>
+			<ul class="nav navbar-nav" id="navbar-search">
+			    <li class="dropdown">
+			        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+			            <span class="caret" id="navbar-search-caret"></span>
+			        </a>
+                    <ul class="dropdown-menu" id="search-menu">
+					    <li>
+					        <form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+						    </form>
+					    </li>
+                        <li>
+                            <a href="#" data-hover="dropdown" data-close-others="false">
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+			                    Filtros<span class="caret" id="navbar-search-filtros-caret"></span>
+			                </a>
+                            <ul class="dropdown-menu sub-menu" id="search-submenu">
+                                <li><a tabindex="1" href="#">
+                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                    Etiquetas</a>
+                                </li>
+                                <li><a tabindex="2" href="#">
+                                    <span class="glyphicon glyphicon-user"></span>
+												Usuarios</a>
+						        </li>
+                            </ul>
+                        </li>    
+                    </ul> <!--dropdown-menu-->
+                </li>
+			</ul>	<!--navbar-nav-->
+
+			<ul class="nav navbar-nav brand-left" id="navbar-left">
+		        <li><a href="#">Preguntas</a></li>
+		        <li><a href="#">Etiquetas</a></li>
+		        <li><a href="#">Usuarios</a></li>
+		        <li><a href="#">Sin respuesta</a></li>
+		    </ul>
+		    
+		    <ul class="nav navbar-nav brand-left" id="navbar-left-small">
+		        <li class="dropdown">
+			        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			            <span class="caret" id="navbar-left-small-caret"></span>
+			        </a>
+                    <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                <li><a href="#">Preguntas</a></li>
+		                <li><a href="#">Etiquetas</a></li>
+		                <li><a href="#">Usuarios</a></li>
+		                <li><a href="#">Sin respuesta</a></li>
+		                <li class="divider"></li>
+		                <li><a href="#">Realizar Pregunta</a></li>
+		            </ul>
+		        </li>
+		    </ul>      
+
+		    <div class="navbar-header" id="navbar-logo">
+				        <a class="navbar-brand" href="#">
+					        <img src="https://dl.dropboxusercontent.com/u/64804488/logo_sin_letras.jpg" alt="logo" width="74" height="40" id="logo">
+				        </a>
+		    </div><!-- navbar-header-->
+		    <ul class="nav navbar-nav brand-right" id="navbar-right">
+		        <li><a href="#" id="navbar-realizar_pregunta">Realizar Pregunta
+		            </a></li>
+		        <li class="dropdown">
+		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
+		            <span class="caret"></span>
+		            </a>
+		            <ul class="dropdown-menu" id="login-menu">  
+						<form method="post" class="minimal">
+							<label for="username">
+								Username:
+								<input type="text" name="username" id="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+							</label>
+							<label for="password">
+								Password:
+								<input type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+							</label>
+							<button type="submit" class="btn-minimal">Sign in</button>
+						</form>
+				    </ul>
+		        </li>
+		        <li><a href="#">Registro</a></li>
+		    </ul>
+		</div> <!--container-fluid-->
+	</header>
+	<div class="container" id="cuerpo">
+		<!--barras de navegación de las preguntas-->
+	   <ul class="nav nav-tabs nav-justified">
+			<li role="presentation">
+				<a href="https://dl.dropboxusercontent.com/u/26653260/preguntasRecientes_jQuery.html">Preguntas Recientes</a>
+			</li>
+			<li role="presentation" class="active">
+				<a href="#">Preguntas y Respuestas más valoradas</a>
+				 <!--Primera respuesta-->
+				 <blockquote id="principal"> <!--Aquí debería entrar php y consultar a la base de datos-->
+						<h3>¿Qué es la fuerza de rozamiento?</h3>
+						<footer>Realizada por <a href="#">@aprendizdenewton</a>
+							<img src="https://dl.dropboxusercontent.com/u/26653260/aprendizdenewton.jpg" width="80" height="80" class="img-rounded">
+						</footer>						
+						<blockquote>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#" class="arrobas">@soyelempollóndefísica</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/soyelempoll%C3%B3ndef%C3%ADsica.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<p>Es la fuerza que se opone al movimiento...</p>
+								</div>
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#">@proximaestacionarquitectura</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/proximaestacionarquitectura.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+										<p>Es la fuerza contraria al movimiento...</p>
+								</div>
+							</div>	
+							<div class="jumbotron" id="botonResponder">
+								<p><a class="btn btn-primary btn-lg" href="#" role="button">Responder</a></p>
+							</div>
+							<div class="panel panel-default" id='panelRespuesta'>
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#" class="arrobas">@soyelempollóndefísica</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/soyelempoll%C3%B3ndef%C3%ADsica.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<p>Otra respuesta...</p>
+								</div>
+								<div class="jumbotron" id="botonOkRespuesta">
+									<p><a class="btn btn-primary btn-lg"  href="#" role="button">Enviar Respuesta</a></p>
+								</div>
+							</div>
+						</blockquote>					
+						<ul class="list-inline">
+							<li>
+								<a href="#">FÍSICA</a>
+								<a href="#">CUÁNTICA</a>
+								<a href="#">NATURALEZA</a>
+							</li>
+						</ul>
+				</blockquote>
+				<!--Segunda pregunta-->
+				<blockquote> <!--Aquí debería entrar php y consultar a la base de datos-->
+						<h3>¿Por qué el cielo es azul?</h3>
+						<footer>Realizada por <a href="#">@siempreenlasnubes</a>
+						<img src="https://dl.dropboxusercontent.com/u/26653260/siempreenlasnubes.jpg" width="80" height="80" class="img-rounded">
+						</footer>
+						<blockquote>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#" class="arrobas">@mirandohaciaarriba</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/mirandohaciaarriba.jpeg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<p>El color azul del cielo se produce cuando las partículas de agua
+										en la atmósfera reflejan...</p>
+								</div>
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#">@faltéesediaaclase</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/falteesediaaclase.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+										<p>Pues porque sí...</p>
+								</div>
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#">@elreligioso</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/elReligioso.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+										<p>Porque Dios nos quiere y nos ama</p>
+								</div>
+							</div>						
+						</blockquote>					
+						<ul class="list-inline">
+							<li>
+								<a href="#">FÍSICA</a>
+								<a href="#">RELIGIÓN</a>
+								<a href="#">NATURALEZA</a>
+							</li>
+						</ul>
+				</blockquote>
+				<!--Tercera pregunta-->
+				<blockquote> <!--Aquí debería entrar php y consultar a la base de datos-->
+						<h3>Cómo realizar un dibujo en perspectiva isométrica</h3>
+						<footer>Realizada por <a href="#">@proximaestacionarquitectura</a>
+						<img src="https://dl.dropboxusercontent.com/u/26653260/proximaestacionarquitectura.jpg" width="80" height="80" class="img-rounded">
+						</footer>
+						<blockquote>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#" class="arrobas">@conescuadraycartabón</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/conescuadraycartabon.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										<p>Lo primero de todo es dibujar 3 rectas (ejes x,y,z) que formen 
+										un ángulo de 120º entre sí. A continuación...</p>
+										<p>Aquí te dejo un archivo donde te explica mejor...</p>
+										<span class="glyphicon glyphicon-download-alt" aria-hidden="true">	<a href="#"><strong>Descargar</strong></a></span>
+								</div>
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#">@faltéesediaaclase</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/falteesediaaclase.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+										<p>Pues porque sí...</p>
+								</div>
+								<div class="panel-heading">
+									<h3 class="panel-title">Respuesta de <a href="#">@elreligioso</a></h3>
+									<img src="https://dl.dropboxusercontent.com/u/26653260/elReligioso.jpg" width="80" height="80" class="img-rounded">
+								</div>
+								<div class="panel-body">
+									 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+										<p>Porque Dios nos quiere y nos ama</p>
+								</div>
+							</div>						
+						</blockquote>					
+						<ul class="list-inline">
+							<li>
+								<a href="#">DIBUJO</a>
+								<a href="#">ISOMÉTRICO</a>
+								<a href="#">ARQUITECTURA</a>
+							</li>
+						</ul>
+				</blockquote>				
+			</li>
+			<li role="presentation">
+				<a href="https://dl.dropboxusercontent.com/u/26653260/usuariosmasactivos.html">Usuarios más activos</a>				
+			</li>			
+		</ul>	   
+	</div>
+	<footer class="footer">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
+	            <ul class="nav navbar-nav brand-left">
+		                <li><a href="#">Quienes Somos</a></li>
+		                <li><a href="#">Contacto</a></li>
+		                <li><a href="#">Trabajar Aqui</a></li>
+		                <li class="dropdown">
+		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                        <span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					            <li><a tabindex="1" href="#">Recursos</a></li>
+					            <li><a tabindex="1" href="#">Legal</a></li>
+					            <li><a tabindex="1" href="#">FAQs</a></li>
+					            <li><a tabindex="1" href="#">Ayuda</a></li>
+		                    </ul>
+		                </li>
+		        </ul>
+	        </ul>
+	    </div>
+	</footer>
+	    <!--[if lt IE 9] para adaptar todos los navegadores a html5-->
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
+		<script src="https://dl.dropboxusercontent.com/u/26653260/acciones_mas_valoradas.js"></script>
+
+
+</body>
+</html>
