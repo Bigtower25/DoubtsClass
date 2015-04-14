@@ -1,7 +1,7 @@
 /*estilo del header*/
 html,
 body{
-background:url(images/books.jpg) no-repeat center center fixed #9eb9ce;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;
+background:url(images/books.jpg) center center fixed #9eb9ce;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;
 height: 100%;
 margin-left:5%;
 margin-right: 5%;
