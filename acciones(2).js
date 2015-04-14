@@ -1,18 +1,16 @@
 
 $(document).ready(
 	function(){
-		$('blockquote').hover(
+		$('blockquote').click(
 			function(){
-				$(this).hide(2000,
-				function(){
-				$(this).show(4000,
-				function(){});
+				if($(this).is(":hidden")){
+					$(this).show(4000);				
 				}
-				);
+				else{
+					$(this).slideUp();			
+				}
 			});
-			/*function(){
-				$(this).show("slow"),
-			});*/
+	
 	}
 
 );
