@@ -14,7 +14,7 @@
 		  echo 'El valor de del post es '.$_POST['nombreU'];
 		  //comprobar primero que el nombre de usuario existe o no
 		  echo 'Antes del bucle';
-		  while($result = mysql_fetch_array($rec)){
+		  while($result = mysql_fetch_array($rec,MYSQL_ASSOC)){
 			 echo 'En el bucle';
 			if($result->usuario == $_POST['nombreU']){
 				//mensaje de que el usuario ya existe
