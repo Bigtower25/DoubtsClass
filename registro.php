@@ -313,10 +313,14 @@
         if(isset($_POST['enviar'])){
 		 
 		  $sql = 'SELECT * FROM usuario';
+          echo 'Aquiiiiiiiiiiiiii';
 		  $rec = mysql_query($sql);
+		  echo 'Despues del query';
 		  $verificar_usuario = 0;
+		  echo 'El valor de verificar usuario es $verificar_usuario';
 		  //comprobar primero que el nombre de usuario existe o no
 		  while($result = mysql_fetch_object($rec)){
+			 echo 'En el bucle';
 			if($result->usuario == $_POST['nombreU']){
 				//mensaje de que el usuario ya existe
 				$verificar_usuario = 1;
