@@ -37,8 +37,9 @@
 			 echo $usuario;
 			 echo $nombre;
 			 
-			 $sql = "INSERT INTO `aplicacionesweb`.`usuario` (`idUsuario`,`Nombre`,`Apellido_1`,`Apellido_2`,`Edad`,`Contraseña`,`Fecha_Registro`,`Localización`,`Email`,`Privilegio`,`Usuario_idUsuario`,`Foto de Perfil`) VALUES (\'$usuario\',\'$nombre\',\'$apellido1\',\'$apellido2\',NULL,\'$contrasenia\',CURRENT_TIMESTAMP,\'$ciudad\',\'$email\',\'0\',NULL,NULL);";
-			 
+			 /*$sql = "INSERT INTO `aplicacionesweb`.`usuario` (`idUsuario`,`Nombre`,`Apellido_1`,`Apellido_2`,`Edad`,`Contraseña`,`Fecha_Registro`,`Localización`,`Email`,`Privilegio`,`Usuario_idUsuario`,`Foto de Perfil`) VALUES (\'$usuario\',\'$nombre\',\'$apellido1\',\'$apellido2\',NULL,\'$contrasenia\',CURRENT_TIMESTAMP,\'$ciudad\',\'$email\',\'0\',NULL,NULL);";
+			 */
+			 $sql = "INSERT INTO usuario (idUsuario,nombre,apellido_1,apellido_2,edad,contrasenia) VALUES ('$usuario','$nombre','$apellido1','$apellido2',NULL,'$contrasenia')";
 			 mysql_query($sql);
 			 
 		  }
