@@ -10,9 +10,10 @@
 		  $rec = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
 		  echo 'Despues del query';
 		  $verificar_usuario = 0;
-		  echo 'El valor de verificar usuario es $verificar_usuario';
+		  echo 'El valor de verificar usuario es'.$verificar_usuario;
 		  echo 'El valor de del post es '.$_POST['nombreU'];
 		  //comprobar primero que el nombre de usuario existe o no
+		  echo 'Antes del bucle';
 		  while($result = mysql_fetch_array($rec)){
 			 echo 'En el bucle';
 			if($result->usuario == $_POST['nombreU']){
@@ -20,8 +21,9 @@
 				$verificar_usuario = 1;
 			}
 		  }
+		  echo 'Despues del bucle';
 		  if($verificar_usuario==0){
-			
+			  echo 'Verificar es 0';
 			 $usuario = $_POST['nombreU'];
 			 $nombre = $_POST['nombre'];
 			 $apellido1 = $_POST['apellido1'];
@@ -32,8 +34,8 @@
 			 $fechaDN = $_POST['fechaDN'];
 			 $biografia = $_POST['miBiografia'];
 			 
-			 echo '$usuario';
-			 echo '$nombre';
+			 echo $usuario;
+			 echo $nombre;
 			 
 			 $sql = "INSERT INTO usuario (idUsuario,Nombre,Apellido_1,Apellido_2,Email,Contraseña,Localización) VALUES ('$usuario','$nombre','$apellido1','$email','$contrasenia','$ciudad')";
 		     mysql_query($sql);
