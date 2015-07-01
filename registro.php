@@ -306,7 +306,6 @@
 		                        <span class="caret"></span>
 		                    </a>
 		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
-					            <li><a tabindex="1" href="#">Recursos</a></li>
 					            <li><a tabindex="1" href="#">Legal</a></li>
 					            <li><a tabindex="1" href="#">FAQs</a></li>
 					            <li><a tabindex="1" href="#">Ayuda</a></li>
@@ -336,7 +335,6 @@
 		                            <span class="caret"></span>
 		                        </a>
 		                        <ul class="dropdown-menu drop-up" id="footer-otros-menu">
-					                <li><a tabindex="1" href="#">Recursos</a></li>
 					                <li><a tabindex="1" href="#">Legal</a></li>
 					                <li><a tabindex="1" href="#">FAQs</a></li>
 					                <li><a tabindex="1" href="#">Ayuda</a></li>
