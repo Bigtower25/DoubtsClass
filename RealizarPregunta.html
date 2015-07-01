@@ -208,21 +208,21 @@
 		<label for="etiquetas">
 			Etiquetas:
 		</label>
-		<form id="seleccion">
-		<select name="Tags" id="Tags">
+		<div id="seleccion">
+			<select name="Tags" id="Tags">
 			<!--TODO: codigo PHP que haga una consulta a la BBDD y cargue todas las etiquetas-->
-			<option value="1">Aeronaútica</option> 
-			<option value="2">Antropologia</option> 
-			<option value="3">Arqueologia</option>
-			<option value="4">Arquitectura</option>
-			<option value="5">Astronomia</option>
-			<option value="6">Biblioteconomia</option>
-			<option value="7">Biologia</option>
-			<option value="8">Botánica</option>
-		</select>
-		<button type="submit" class="btn-minimal" id="addEtiqueta">Añadir Etiqueta</button>
-		<button type="submit" class="btn-minimal" id="clearEtiqueta">Limpiar</button>
-		</form>
+				<option value="1">Aeronaútica</option> 
+				<option value="2">Antropologia</option> 
+				<option value="3">Arqueologia</option>
+				<option value="4">Arquitectura</option>
+				<option value="5">Astronomia</option>
+				<option value="6">Biblioteconomia</option>
+				<option value="7">Biologia</option>
+				<option value="8">Botánica</option>
+			</select>
+			<button type="submit" class="btn-minimal" id="addEtiqueta">Añadir Etiqueta</button>
+			<button type="submit" class="btn-minimal" id="clearEtiqueta">Limpiar</button>
+		</div>
 		<div id="tag"></div>
 		<button type="submit" class="btn-minimal" style="margin-top:30px;">Realizar Pregunta</button>
 	</form>
