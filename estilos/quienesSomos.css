@@ -1,0 +1,7 @@
+/*estilo del header*/
+html,
+body{
+background:url(../images/books_degr.jpg) no-repeat center center fixed #9eb9ce;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;
+background-size:cover;
+}
+
