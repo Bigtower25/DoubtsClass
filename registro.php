@@ -37,7 +37,7 @@
 			 echo $usuario;
 			 echo $nombre;
 			 
-			 $sql = "INSERT INTO usuario (idUsuario,Nombre,Apellido_1,Apellido_2,Email,Contraseña,Localización) VALUES ('$usuario','$nombre','$apellido1','$email','$contrasenia','$ciudad')";
+			 $sql = "INSERT INTO usuario (idUsuario,Nombre,Apellido_1,Apellido_2,Email,Contraseña,Localización) VALUES ($usuario,$nombre,$apellido1,$email,$contrasenia,$ciudad)";
 		     mysql_query($sql);
 			 
 		  }
