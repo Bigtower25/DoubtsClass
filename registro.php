@@ -16,7 +16,7 @@
 		  echo 'Antes del bucle';
 		  while($result = mysql_fetch_array($rec,MYSQL_ASSOC)){
 			 echo 'En el bucle';
-			if($result->usuario == $_POST['nombreU']){
+			if($result['Nombre'] == $_POST['nombreU']){
 				//mensaje de que el usuario ya existe
 				$verificar_usuario = 1;
 			}
@@ -37,8 +37,9 @@
 			 echo $usuario;
 			 echo $nombre;
 			 
-			 $sql = "INSERT INTO `aplicacionesweb`.`usuario` (`idUsuario`,`Nombre`,`Apellido_1`,`Apellido_2`,`Email`,`Contraseña`,`Localización`) VALUES ('$usuario','$nombre','$apellido1','$email','$contrasenia','$ciudad')";
-		     mysql_query($sql);
+			 $sql = "INSERT INTO `aplicacionesweb`.`usuario` (`idUsuario`,`Nombre`,`Apellido_1`,`Apellido_2`,`Edad`,`Contraseña`,`Fecha_Registro`,`Localización`,`Email`,`Privilegio`,`Usuario_idUsuario`,`Foto de Perfil`) VALUES (\'$usuario\',\'$nombre\',\'$apellido1\',\'$apellido2\',NULL,\'$contrasenia\',CURRENT_TIMESTAMP,\'$ciudad\',\'$email\',\'0\',NULL,NULL);";
+			 
+			 mysql_query($sql);
 			 
 		  }
 		  else{
