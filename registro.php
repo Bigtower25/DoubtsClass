@@ -312,7 +312,7 @@
 	 <?php
         if(isset($_POST['enviar'])){
 		 
-		  $sql = 'SELECT * FROM usuarios';
+		  $sql = 'SELECT * FROM usuario';
 		  $rec = mysql_query($sql);
 		  $verificar_usuario = 0;
 		  //comprobar primero que el nombre de usuario existe o no
