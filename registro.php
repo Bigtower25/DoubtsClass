@@ -334,6 +334,9 @@
 			 $fechaDN = $_POST['fechaDN'];
 			 $biografia = $_POST['miBiografia'];
 			 
+			 print($usuario);
+			 print($nombre);
+			 
 			 $sql = "INSERT INTO usuario (idUsuario,Nombre,Apellido_1,Apellido_2,Email,Contraseña,Localizacion) VALUES ('$usuario','$nombre','$apellido1','$email','$contrasenia','$ciudad')";
 		     mysql_query($sql);
 			 
