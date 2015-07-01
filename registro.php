@@ -314,12 +314,13 @@
 		 
 		  $sql = 'SELECT * FROM usuario';
           echo 'Aquiiiiiiiiiiiiii';
-		  $rec = mysql_query($sql);
+		  $rec = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
 		  echo 'Despues del query';
 		  $verificar_usuario = 0;
 		  echo 'El valor de verificar usuario es $verificar_usuario';
+		  echo 'El valor de del post es '.$_POST['nombreU'];
 		  //comprobar primero que el nombre de usuario existe o no
-		  while($result = mysql_fetch_object($rec)){
+		  while($result = mysql_fetch_array($rec)){
 			 echo 'En el bucle';
 			if($result->usuario == $_POST['nombreU']){
 				//mensaje de que el usuario ya existe
