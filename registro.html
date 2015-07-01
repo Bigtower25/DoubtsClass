@@ -309,5 +309,56 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
 		
+	 <?php
+        if(isset($_POST['enviar'])){
+		 
+		  $sql = 'SELECT * FROM usuarios';
+		  $rec = mysql_query($sql);
+		  $verificar_usuario = 0;
+		  //comprobar primero que el nombre de usuario existe o no
+		  while($result = mysql_fetch_object($rec)){
+			if($result->usuario == $_POST['nombreU']){
+				//mensaje de que el usuario ya existe
+				$verificar_usuario = 1;
+			}
+		  }
+		  if($verificar_usuario==0){
+			
+			 $usuario = $_POST['nombreU'];
+			 $nombre = $_POST['nombre'];
+			 $apellido1 = $_POST['apellido1'];
+			 $apellido2 = $_POST['apellido2'];
+			 $email = $_POST['email'];
+			 $contrasenia = $_POST['contrasenia'];
+			 $ciudad = $_POST['ciudad'];
+			 $fechaDN = $_POST['fechaDN'];
+			 $biografia = $_POST['miBiografia'];
+		  }
+		  
+		  
+		
+		}
+
+
+
+	 ?>	 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 </body>
 </html>
