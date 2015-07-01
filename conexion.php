@@ -7,5 +7,5 @@
 	echo 'Conexión establecida';
 	mysql_select_db('aplicacionesweb')
 	 or die ('No se pudo seleccionar la base de datos');
-
+    echo 'Se seleccionó la base de datos correcta';
 ?>
