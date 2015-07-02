@@ -1,0 +1,22 @@
+ESENCIAL:
+
+- De los .html de preferencias hay que borrar la sección etiqutas.
+
+- Hay q actualizar las querys de los scripts con la nueva base de datos.
+
+- Hay q enlazar todas las distintas páginas entre sí.
+
+- Págína index una vez realizado el login. Sin boton de registro. el boton de login ahora es el del PERFIL. No aparece la ayuda.
+
+- Página del perfil (tiene q mostrar los datos en función de las preferencias, permitir editar(subir) el avatar, enlazar con las páginas de preferencias para que el usuario edite su información).
+
+- Distintos scripts para subir/cambiar/mostrar la informacion etc.
+
+- En los dos indices (sin/con login) despues de la ayuda (si se muestra) tienen que aparecer las distintas preguntas, 2 visualizaciones(por orden de votos, mas recientes primero). Cuando si utilice el filtro se mostraran solo las de las etiquetas especificadas.
+
+- Al hacer click se actualiza la pagina en la pregunta solo se muestra la información de esta, descripcion, respuestas y cuadro para responder. 
+
+OPCIONAL:
+
+- Link a los perfiles de los usuarios en las preguntas/respuestas.
+
