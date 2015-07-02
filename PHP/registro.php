@@ -5,6 +5,12 @@
 	echo 'Aquiiiiiiiiiiiiii';
 =======
 	 <?php
+
+session_start();//crea una sesión para ser usada mediante una petición GET o POST, o pasado por una cookie y la sentencia include_once es la usaremos para incluir el archivo de conexión a la base de datos que creamos anteriormente.
+
+include_once "conexion.php";
+?>
+	 <?php
         if(isset($_POST['enviar'])){
 		 
 		  $sql = 'SELECT * FROM usuario';
