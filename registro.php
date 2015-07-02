@@ -45,6 +45,10 @@
 			 $sql = "INSERT INTO usuario (idUsuario,nombre,apellido_1,apellido_2,contrasenia,localizacion,email) VALUES ('$usuario','$nombre','$apellido1','$apellido2','$contrasenia','$localizacion','$email')";
 			 mysql_query($sql);
 			 
+			 print '<div class="alert alert-success" role="alert">
+			        <p>Usted se ha dado de alta correctamente. Diríjase a la
+					<a href="IndexInicial.html" class="alert-link">página principal</a> y entre a través del login
+					</div>';
 		  }
 		  else{
 				echo '<h3>USTED YA SE HA REGISTRADO</h3>';
