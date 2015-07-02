@@ -1,8 +1,7 @@
-	 <?php
-        /*if(isset($_POST['enviar'])){
-		 
-		  $sql = 'SELECT * FROM usuario';
-          echo 'Aquiiiiiiiiiiiiii';
+<?php
+    /*if(isset($_POST['enviar'])){
+	$sql = 'SELECT * FROM usuario';
+	echo 'Aquiiiiiiiiiiiiii';
 		  $rec = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
 		  echo 'Despues del query';
 		  $verificar_usuario = 0;
@@ -31,7 +30,7 @@
 			 echo '$usuario';
 			 echo '$nombre';
 			 
-			 $sql = "INSERT INTO usuario (idUsuario,Nombre,Apellido_1,Apellido_2,Email,Password,Localizacion) VALUES ('$usuario','$nombre','$apellido1','$email','$contrasenia','$ciudad')";
+			 $sql = "INSERT INTO usuario (idUsuario,Nombre,Apellido_1,Apellido_2,Email,Contraseña,Localización) VALUES ('$usuario','$nombre','$apellido1','$email','$contrasenia','$ciudad')";
 		     mysql_query($sql);
 			 
 		  }
@@ -40,4 +39,4 @@
 			}
 		  
 		}*/
-	 ?>		
+?>		
