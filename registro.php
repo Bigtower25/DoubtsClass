@@ -38,10 +38,11 @@
 			 
 			 //echo $usuario;
 			 //echo $nombre;
+			 //echo 'La localización es '.$localizacion;
 			 
 			 /*$sql = "INSERT INTO `aplicacionesweb`.`usuario` (`idUsuario`,`Nombre`,`Apellido_1`,`Apellido_2`,`Edad`,`Contraseña`,`Fecha_Registro`,`Localización`,`Email`,`Privilegio`,`Usuario_idUsuario`,`Foto de Perfil`) VALUES (\'$usuario\',\'$nombre\',\'$apellido1\',\'$apellido2\',NULL,\'$contrasenia\',CURRENT_TIMESTAMP,\'$ciudad\',\'$email\',\'0\',NULL,NULL);";
 			 */
-			 $sql = "INSERT INTO usuario (idUsuario,nombre,apellido_1,apellido_2,edad,contrasenia,localización,email) VALUES ('$usuario','$nombre','$apellido1','$apellido2',NULL,'$contrasenia','$localizacion','$email')";
+			 $sql = "INSERT INTO usuario (idUsuario,nombre,apellido_1,apellido_2,contrasenia,localizacion) VALUES ('$usuario','$nombre','$apellido1','$apellido2','$contrasenia','$localizacion')";
 			 mysql_query($sql);
 			 
 		  }
