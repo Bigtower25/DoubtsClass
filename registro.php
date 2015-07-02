@@ -3,7 +3,9 @@
 	include_once "conexion.php";
 ?>
 <?php
-        if(isset($_POST['enviar'])){
+    if(isset($_POST['enviar'])){
+		
+	    if(isset($_POST['aceptarTyC'])){
 		 
 		  $sql = 'SELECT * FROM usuario';
           //echo 'Aquiiiiiiiiiiiiii';
@@ -53,6 +55,12 @@
 		  else{
 				echo '<h3>USTED YA SE HA REGISTRADO</h3>';
 			}
+		}
+		else{
+		 print '<div class="alert alert-warning" role="alert">
+			        <p>Debe de aceptar las condiciones</p> 
+				</div>';
+		}
 		  
 		}
 	 ?>	
