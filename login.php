@@ -25,7 +25,7 @@
 		if(verificar_login($_POST['username'],$_POST['password'],$result)==1){
 		 $_SESSION['userid'] = $_POST['username'];
 		 print '<div class="alert alert-success" role="alert">
-			        <p>Bienvenido </p>'.$_POST['username'].'
+			        <p>Bienvenido </p><strong>'.$_POST['username'].'</strong>
 					</div>';		
 		}
 		else{
@@ -38,7 +38,7 @@
   else{
       $_SESSION['userid'] = $_POST['username'];
 	  print '<div class="alert alert-success" role="alert">
-			   <p>Bienvenido </p>'.$_POST['username'].'
+			   <p>Bienvenido </p><strong>'.$_POST['username'].'</strong>
 			   <p>¿Cómo lo llevas pelotudo?</p>
 			 </div>';
 			 
