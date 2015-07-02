@@ -12,7 +12,7 @@
 		  $count ++;
 		  $result = $row;
 		}
-		if(count==1){
+		if($count==1){
 		   return 1;		
 		}
 		else{
