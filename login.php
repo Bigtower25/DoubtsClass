@@ -39,9 +39,26 @@
       $_SESSION['userid'] = $_POST['username'];
 	  print '<div class="alert alert-success" role="alert">
 			   <p>Bienvenido </p>'.$_POST['username'].'
-			   <p>Como lo llevas </p>
+			   <p>¿Cómo lo llevas pelotudo?</p>
 			 </div>';
 			 
   }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--[endif]-->
+	<meta charset="UTF-8">
+	<!--mobile first-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ayuda</title>
+	<!--cargar bootstrap desde CDN-->
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<!--cargar css basico encabezado y footer-->
+	<link rel="stylesheet" type="text/css" href="estilos/bars2.css" media="all">
+	<link rel="stylesheet" type="text/css" href="estilos/login.css" media="all">
+	<link rel="stylesheet" type="text/css" href="estilos/ayuda.css" media="all">
+</head>
+<body>
+</body>
