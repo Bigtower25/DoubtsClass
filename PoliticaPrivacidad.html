@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--[endif]-->
+	<meta charset="UTF-8">
+	<!--mobile first-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Politica de Privacidad</title>
+	<!--cargar bootstrap desde CDN-->
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<!--cargar css basico encabezado y footer-->
+	<link rel="stylesheet" type="text/css" href="estilos/bars2.css" media="all">
+	<link rel="stylesheet" type="text/css" href="estilos/login.css" media="all">
+	<link rel="stylesheet" type="text/css" href="estilos/quienesSomos.css" media="all">
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top" id="nav-small">
+        <div class="container-fluid">
+            <div class="navbar-header">
+				        <a class="navbar-brand" href="#">
+					        <img src="images/logo.jpg" alt="logo" width="100" height="64">
+				        </a>
+		    </div><!-- navbar-header-->
+             <ul class="nav navbar-nav brand-right" id="nav-small-right">
+		        <li class="dropdown">
+			        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			            <span class="caret" id="navbar-left-small-caret"></span>
+			        </a>
+                    <ul class="dropdown-menu" id="navbar-left-small-menu">
+                        <form class="navbar-form navbar-left" role="search">
+						    <div class="form-group">
+							    <input type="text" class="form-control" placeholder="Search">
+							</div>
+						</form>
+						<li>
+                            <a href="#" data-hover="dropdown" data-close-others="false">
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+			                    Filtros<span class="caret" id="navbar-search-filtros-caret"></span>
+			                </a>
+                            <ul class="dropdown-menu sub-menu">
+                                <li><a tabindex="1" href="#">
+                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                    Etiquetas</a>
+                                </li>
+                                <li><a tabindex="2" href="#">
+                                    <span class="glyphicon glyphicon-user"></span>
+												Usuarios</a>
+						        </li>
+                            </ul>
+                        </li> 
+                        <li class="divider"></li>
+                        <li class="dropdown">
+			                <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			                     Vistas<span class="caret"></span>
+			                </a>
+                            <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                        <li><a href="#">Preguntas</a></li>
+		                        <li><a href="#">Etiquetas</a></li>
+		                        <li><a href="#">Usuarios</a></li>
+		                        <li><a href="#">Sin respuesta</a></li>
+		                    </ul>
+		                </li>
+		                <li class="divider"></li>
+		                <li><a href="#">Realizar Pregunta</a></li>
+		                <li class="divider"></li>
+		                <li class="dropdown">
+		                <li>
+		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
+		                        <span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu" id="login-menu">
+					            <li>
+					                <form class="navbar-form navbar-left" role="email">
+								        <div class="form-group">
+									        <input type="text" class="form-control" placeholder="Email">
+								        </div>
+						            </form>
+					            </li>
+    					        <li>
+					                <form class="navbar-form navbar-left" role="password">
+								        <div class="form-group">
+									        <input type="text" class="form-control" placeholder="Contraseña">
+								        </div>
+						            </form>
+					            </li>
+					            <li>
+					                <button type="submit" class="btn btn-large btn-primary" id="login-signin">Sign in</button>
+    					        </li>
+				            </ul>
+		                </li>
+		                <li><a href="#">Registro</a></li>
+		            </ul>
+		        </li>
+		    </ul>
+        </div><!--container-fluid-->
+    </header>
+    
+	<header class="navbar navbar-inverse navbar-fixed-top" id="nav">
+		<div class="container-fluid">
+		    <ul class="nav navbar-nav navbar-left">
+		        <li><a href="#" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
+		    </ul>
+			<ul class="nav navbar-nav" id="navbar-search">
+			    <li class="dropdown">
+			        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
+			            <span class="caret" id="navbar-search-caret"></span>
+			        </a>
+                    <ul class="dropdown-menu" id="search-menu">
+					    <li>
+					        <form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+						    </form>
+					    </li>
+                        <li>
+                            <a href="#" data-hover="dropdown" data-close-others="false">
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+			                    Filtros<span class="caret" id="navbar-search-filtros-caret"></span>
+			                </a>
+                            <ul class="dropdown-menu sub-menu" id="search-submenu">
+                                <li><a tabindex="1" href="#">
+                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                    Etiquetas</a>
+                                </li>
+                                <li><a tabindex="2" href="#">
+                                    <span class="glyphicon glyphicon-user"></span>
+												Usuarios</a>
+						        </li>
+                            </ul>
+                        </li>    
+                    </ul> <!--dropdown-menu-->
+                </li>
+			</ul>	<!--navbar-nav-->
+
+			<ul class="nav navbar-nav brand-left" id="navbar-left">
+		        <li><a href="#">Preguntas</a></li>
+		        <li><a href="#">Etiquetas</a></li>
+		        <li><a href="#">Usuarios</a></li>
+		        <li><a href="#">Sin respuesta</a></li>
+		    </ul>
+		    
+		    <ul class="nav navbar-nav brand-left" id="navbar-left-small">
+		        <li class="dropdown">
+			        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			            <span class="caret" id="navbar-left-small-caret"></span>
+			        </a>
+                    <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                <li><a href="#">Preguntas</a></li>
+		                <li><a href="#">Etiquetas</a></li>
+		                <li><a href="#">Usuarios</a></li>
+		                <li><a href="#">Sin respuesta</a></li>
+		                <li class="divider"></li>
+		                <li><a href="#">Realizar Pregunta</a></li>
+		            </ul>
+		        </li>
+		    </ul>      
+
+		    <div class="navbar-header" id="navbar-logo">
+				        <a class="navbar-brand" href="#">
+					        <img src="https://dl.dropboxusercontent.com/u/64804488/logo_sin_letras.jpg" alt="logo" width="74" height="40" id="logo">
+				        </a>
+		    </div><!-- navbar-header-->
+
+		    <ul class="nav navbar-nav brand-right" id="navbar-right">
+		        <li><a href="#" id="navbar-realizar_pregunta">Realizar Pregunta
+		            </a></li>
+		        <li class="dropdown">
+		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
+		            <span class="caret"></span>
+		            </a>
+		            <ul class="dropdown-menu" id="login-menu">				    
+						<form method="post" class="minimal">
+							<label for="username">
+							Username:
+								<input type="text" name="username" id="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+							</label>
+							<label for="password">
+							Password:
+								<input type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+							</label>
+							<button type="submit" class="btn-minimal">Sign in</button>
+						</form>
+				    </ul>
+		        </li>
+		        <li><a href="#">Registro</a></li>
+		    </ul>
+
+		</div> <!--container-fluid-->
+	</header>
+	<!--cuerpo-->
+	<div class="container-fluid" style="margin-bottom: 50px">
+		<h1>Política de Privacidad</h1>
+		<hr width="100%" size="15" align="left" style="color: black;" noshade="noshade"></hr>
+		<section>
+		<h4>Esta política de privacidad describe la información que recopilamos cuando visita la red, cómo utilizamos esta información, y qué opciones ofrecemos para acceder a ella, actualizarla y controlarla. Esta versión de la política de privacidad es efectiva a partir del 01/07/2015.</h4> 
+		<h3>Tipos de Información</h3>
+		<ul>
+			<li type="disc"><font size="4"><b>Información personal:</b></font><b> es cualquier clase de información que se pueda utilizar para identificar a una persona, sin incluir información personal que estuviese codificada o fuera anónima.</b></li>
+			<br>
+			<li type="disc"><font size="4"><b>Información personal sensible:</b></font><b> es información que cumple con los criterios de "información personal", y además:</b></li>
+			<br>
+			<ul>
+				<li><b>revela la raza, origen étnico, opiniones políticas, creencias religiosas o filosóficas, afiliación sindical, o se refiere a la salud, vida sexual, información sobre ayudas sociales, o información sobre procedimientos criminales o administrativos, aparte de en el contexto de procedimientos judiciales en espera.</b></li>
+			</ul>			
+		</ul>
+		<h3>Cómo recopilamos la información</h3>
+		<h4>Recopilamos información de 2 formas:</h4>
+		<ul>
+			<li type="disc"><b>Información obtenida del uso de la red es principalmente información de identificación no personal, como el tipo de navegador, el uso de cookies para mantener la sesión, etc. Recopilamos esta información con el fin de comprender mejor cómo los visitantes usan el servicio y siempre que sea posible, para mejorar su experiencia.</b></li>
+			<br>
+			<li type="disc"><b>Información proporcionada directamente mediante la interacción con la web.La cantidad y tipo de información depende de la naturaleza de la interacción. Doubts Class garantiza expresamente que los datos que usted nos facilite son mantenidos con absoluta confidencialidad.</b></li>
+		</ul>
+		<h3>Cómo utilizamos la información recopilada</h3>
+		<ul>
+			<li><h4>Tratamiento de sus datos personales</h4></li>
+			<p><b>De conformidad con lo establecido en la Ley Orgánica 15/99, de 13 de Diciembre de Protección de Datos de Carácter Personal y en la normativa de desarollo, usted puede, en cualquier momento, acceder, modificar o solicitar que cancelemos su información personal de nuestra base de datos a través de nuestra pagina web, enviando un e-mail a <a href="mailto:aplicacioneswebfiupm2015@gmail.com" style="color: blue;"><b>aplicacioneswebfiupm2015@gmail.com</b></a>.</b></p>
+			<p><b>El tratamiento y gestión de los mismos cumple lo estipulado en el Real Decreto 1720/2007, de 21 de diciembre, por el que se aprueba el reglamento de Desarrollo de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</b></p>
+			<p><b>Doubts Class bajo ningún concepto, vende información sobre sus clientes a terceros ni cederá información alguna de sus datos.</b></p>
+			<li><h4>Seguridad</h4></li>
+			<p><b>Doubts Class toma todas las medidas necesarias para proteger la confidencialidad de su información personal.</b></p>
+			<p><b>Únicamente empleados autorizados tienen acceso a las bases de datos que almacenan información del usuario o a los servidores que hospedan nuestro servicio. </b></p>
+			<li><h4>Modificaciones</h4></li>
+			<p><b>Doubts Class se reserva el derecho de modificar su política de privacidad a causa de un cambio legislativo, jurisprudencial o de acuerdo con su criterio o práctica empresarial.</b></p>
+			<p><b>Para cualquier duda o aclaración referente a nuestra política de privacidad, por favor póngase en contacto con nosotros en <a href="mailto:aplicacioneswebfiupm2015@gmail.com" style="color: blue;"><b>aplicacioneswebfiupm2015@gmail.com</b></a>.</b></p>
+		</ul>
+		</section>
+	</div>
+	<footer class="footer" id="footer">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
+	            <ul class="nav navbar-nav brand-left">
+		                <li><a href="#">Quienes Somos</a></li>
+		                <li><a href="#">Contacto</a></li>
+		                <li><a href="#">Trabajar Aqui</a></li>
+		                <li class="dropdown">
+		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                        <span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					            <li><a tabindex="1" href="#">Legal</a></li>
+					            <li><a tabindex="1" href="#">FAQs</a></li>
+					            <li><a tabindex="1" href="#">Ayuda</a></li>
+		                    </ul>
+		                </li>
+		        </ul>
+	        </ul>
+	    </div>
+	</footer>
+	
+	
+	<footer class="footer" id="footer-small">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom-small">
+	                <ul class="nav navbar-nav" id="footer-nav">
+	                    <li class="dropdown">
+			                <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			                    <span class="caret" id="navbar-left-small-caret"></span>
+			                </a>
+                        <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                    <li><a href="#">Quienes Somos</a></li>
+		                    <li><a href="#">Contacto</a></li>
+		                    <li><a href="#">Trabajar Aqui</a></li>
+		                    <li class="dropdown">
+		                        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                            <span class="caret"></span>
+		                        </a>
+		                        <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					                <li><a tabindex="1" href="#">Legal</a></li>
+					                <li><a tabindex="1" href="#">FAQs</a></li>
+					                <li><a tabindex="1" href="#">Ayuda</a></li>
+		                        </ul><!--footer-otros-menu-->
+		                </li><!--dropdown otros-->
+		                </ul><!--navbar-left-small-menu-->
+		                </li>
+		            </ul>
+	            </ul>
+	    </div>
+	</footer>
+	    <!--[if lt IE 9] para adaptar todos los navegadores a html5-->
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
+		
+</body>
+</html>
