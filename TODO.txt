@@ -6,7 +6,7 @@ ESENCIAL:
 
 - Hay q enlazar todas las distintas páginas entre sí.
 
-- Págína index una vez realizado el login. Sin boton de registro. el boton de login ahora es el del PERFIL. No aparece la ayuda.
+- Una vez realizado el login, se actualiza la barra de navegacion. Sin boton de registro. el boton de login ahora es el del PERFIL. No aparece la ayuda.
 
 - Página del perfil (tiene q mostrar los datos en función de las preferencias, permitir editar(subir) el avatar, enlazar con las páginas de preferencias para que el usuario edite su información).
 
