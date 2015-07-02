@@ -251,7 +251,7 @@
 							Password:
 								<input type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
 							</label>
-							<button type="submit" class="btn-minimal">Sign in</button>
+							<button type="submit" name="enviarLogin" class="btn-minimal">Sign in</button>
 						</form>
 				    </ul>
 		        </li>
