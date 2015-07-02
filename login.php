@@ -47,6 +47,7 @@
 		print '<div class="alert alert-danger" role="alert">
 			   <p>El nombre de usuario o contraseña es incorrecto</p>
 			   </div>';
+			   header("IndexInicial.html");
 	}
 			 
   }
