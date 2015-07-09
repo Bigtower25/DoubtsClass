@@ -152,10 +152,17 @@
 						<li><a href="#" id="bienvenido">Bienvenido'.$_SESSION['userid'].'</a>
 						</li>				
 					</ul>
-					<ul class="nav navbar-nav brand-right" id="navbar-right">
-						<li><a href="#" id="logout">Logout</a>
-						</li>
-					</ul>';
+					<li id="Logeado" class="dropdown">
+		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Perfil
+		            <span class="caret"></span>
+		            </a>
+		            <ul class="dropdown-menu" id="login-menu">				    
+						<li><a href="#">Datos Personales</a></li>
+						<li><a href="#">Privacidad</a></li>
+						<li><a href="#">Cuenta</a></li>
+						</form>
+				    </ul>
+		        </li>
 				}
 				//if(isset($_POST['logout'])){
 					//session_destroy();
