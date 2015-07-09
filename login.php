@@ -1,5 +1,5 @@
 <?php
-    session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\scripts\DoubsClassLocal\Sesiones");
+    session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\projects\pruebas\DoubtsClass\Sesiones");
 	session_start();
 	$_SESSION["Acceso"] = time();
 	include_once "conexion.php";
@@ -176,5 +176,62 @@
 			?>
 		</div>
 	</header>	
+	<footer class="footer" id="footer">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
+	            <ul class="nav navbar-nav brand-left">
+		                <li><a href="#">Quienes Somos</a></li>
+		                <li><a href="#">Contacto</a></li>
+		                <li><a href="#">Trabajar Aqui</a></li>
+		                <li class="dropdown">
+		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                        <span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					            <li><a tabindex="1" href="#">Legal</a></li>
+					            <li><a tabindex="1" href="#">FAQs</a></li>
+					            <li><a tabindex="1" href="#">Ayuda</a></li>
+		                    </ul>
+		                </li>
+		        </ul>
+	        </ul>
+	    </div>
+	</footer>
+	
+	
+	<footer class="footer" id="footer-small">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom-small">
+	                <ul class="nav navbar-nav" id="footer-nav">
+	                    <li class="dropdown">
+			                <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			                    <span class="caret" id="navbar-left-small-caret"></span>
+			                </a>
+                        <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                    <li><a href="#">Quienes Somos</a></li>
+		                    <li><a href="#">Contacto</a></li>
+		                    <li><a href="#">Trabajar Aqui</a></li>
+		                    <li class="dropdown">
+		                        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                            <span class="caret"></span>
+		                        </a>
+		                        <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					                <li><a tabindex="1" href="#">Legal</a></li>
+					                <li><a tabindex="1" href="#">FAQs</a></li>
+					                <li><a tabindex="1" href="#">Ayuda</a></li>
+		                        </ul><!--footer-otros-menu-->
+		                </li><!--dropdown otros-->
+		                </ul><!--navbar-left-small-menu-->
+		                </li>
+		            </ul>
+	            </ul>
+	    </div>
+	</footer>
+	    <!--[if lt IE 9] para adaptar todos los navegadores a html5-->
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
 </body>
 </html>
