@@ -152,17 +152,21 @@
 						<li><a href="#" id="bienvenido">Bienvenido '.$_SESSION['userid'].'</a>
 						</li>				
 					</ul>
-					<ul class="nav navbar-nav brand-right" id="navbar-left">
-					    <li id="Logeado" class="dropdown">
-		                   <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Perfil
-		                   <span class="caret"></span>
-		                   </a>
-		                   <ul class="dropdown-menu" id="login-menu">		    
+					<ul class="nav navbar-nav brand-right" id="navbar-right">
+					    <li class="dropdown" id="Logeado">
+		                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="true">						  
+		                   Perfil
+						   <span class="caret"></span>
+		                  </a>
+		                  <ul class="dropdown-menu">		    
 						       <li><a href="#">Datos Personales</a></li>
+							   <li role="separator" class="divider"></li>
 						       <li><a href="#">Privacidad</a></li>
+							   <li role="separator" class="divider"></li>
 						       <li><a href="#">Cuenta</a></li>
 				           </ul>
-						</li>
+				        </li>
 					</ul>';
 				}
 				//if(isset($_POST['logout'])){
@@ -170,4 +174,7 @@
 					//header("Location:IndexInicial.html");
 				//}
 			?>
+		</div>
+	</header>	
 </body>
+</html>
