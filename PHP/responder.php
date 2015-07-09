@@ -219,6 +219,7 @@
 		</script>");
 	}
 	else{
+	  $id = $_GET["id"];
 	  $sql = "SELECT Titulo,Fecha,Votos,Descripcion,Usuario_idUsuario,Hora FROM pregunta WHERE idPregunta='".$id."'";
 	  $res = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
 	  $horaActual = 'SELECT TIMESTAMP(NOW());';
