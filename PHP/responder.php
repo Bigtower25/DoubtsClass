@@ -1,8 +1,8 @@
-ï»¿<?php
-    session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\scripts\DoubsClassLocal\Sesiones");
-	session_start(); //Es obligatorio si quiero mover informacion entre las páginas
-	include_once "conexion.php";
-	include_once "login.php";
+<?php
+   session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\scripts\DoubsClassLocal\Sesiones");
+   session_start(); //Es obligatorio si quiero mover informacion entre las páginas
+   include_once "conexion.php";
+   include_once "login.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -200,7 +200,6 @@
 						<li><a href="#">Datos Personales</a></li>
 						<li><a href="#">Privacidad</a></li>
 						<li><a href="#">Cuenta</a></li>
-						</form>
 				    </ul>
 		        </li>
 		        <li><a href="registro.php">Registro</a></li>
@@ -208,8 +207,11 @@
 
 		</div> <!--container-fluid-->
 	</header>
+	<div>
+	
+	</div>
 	<?php
-	if(!isset($_SESSION["userid"])){
+	/*if(!isset($_SESSION["userid"])){
 		print("<script>
 			$(document).ready(function(){
 			  $('#nav').after('<div class=\"alert alert-danger\" role=\"alert\" ");
@@ -218,24 +220,39 @@
 		print ("
 		</script>");
 	}
-	else{
+	else{*/	
 	  $id = $_GET["id"];
 	  $sql = "SELECT Titulo,Fecha,Votos,Descripcion,Usuario_idUsuario,Hora FROM pregunta WHERE idPregunta='".$id."'";
-	  $res = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
+	  $resmsql = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
 	  $horaActual = 'SELECT TIMESTAMP(NOW());';
 	  $resHA = mysql_query($horaActual);
+	  //Imprimir el titulo
+	  while($res = mysql_fetch_array($resmsql,MYSQL_ASSOC)){
 	  print '<div class="panel panel-primary">
 		';
 		print   '<div class="panel-heading">
 		';
-		print     '<h3 class="panel-title">'.$result['Titulo'].'</h3>
+		print     '<h3 class="panel-title">'.$res['Titulo'].'</h3>
 		';
 		print   '</div>
 		';
+		break;
+	  }
+	  while($res2 = mysql_fetch_array($resmsql,MYSQL_ASSOC)){
 		//Panel-body de la descripcion
-		print   '<div class="panel-body">';
-		print     $result['Descripcion'];		
-		print   '</div>';
+		print   '<div class="panel-body">
+		';
+		print    '<ul style background: #DDEEF9" class="list-group-item">
+		';
+		print     $res2['Descripcion'].'<span class="badge">Numero de votos '.$res2['Votos'].'</span>
+		';	
+        print    '</ul>
+		';		 	
+		print   '</div>
+		';
+		break;
+	  }
+	  
 		//Buclecillo de respuestas
 		$sql2 = "SELECT idRespuesta,idUsuario,Votos,Fecha,Descripcion FROM respuesta WHERE Pregunta_idPregunta='".$id."'";
 		//Panel body con las respuestas
@@ -243,18 +260,120 @@
 		while($result = mysql_fetch_array($res2,MYSQL_ASSOC)){
 		print   '<div class="panel-body">
 		';
-		print     '<p>Respuesta realizada por '.$result['idUsuario'].'</p>
+		print     '<ul class"list-group-item">
 		';
-        print     'El dia '.$result['Fecha'];		
-		print   '</div>
-		';
+		
+		print     'Respuesta realizada por '.$result['idUsuario'].' ';
+        print     ' El dia '.$result['Fecha'];
+        print   '<span class="badge"> Número de votos '.$result['Votos'].'</span>';
+        print   '<button type="button" name="botonVotar" id='.$result['idRespuesta'].'class="btn btn-default btn-lg">';
+        print       '<i class="fa fa-hand-o-up">Votar</i>';
+        print   '</button>';		
         print   '<div class="panel-body">
         ';
-		print   $result['Descripcion'];
+		print   '<ul class="list-group-item">
+		';
+		print   '<p>'.$result['Descripcion'].'</p>
+		';
+		print   '</ul>
+		';
         print   '</div>
-        ';		
-		}	    
-	}
-	?>	
+        ';
+		print   '</ul>
+		';
+		print   '</div>
+		';
+        //print '<div class="panel panel-primary"></div>';	
+		}
+		print '<form method="post">
+		';
+		print '<div class="form-group">
+		';
+		print   '<label for="escribirPregunta">Responder</label>
+		';
+		print   '<input type="text" name="campoRespuesta" class="form-control" placeholder="Escribe aquí tu respuesta">
+		';
+		print '</div>
+		';
+		print '<button type="submit" name="enviarRespuesta" class="btn btn-default">Enviar</button>
+		';		
+		print '</form>
+		';		
+	    print '</div>
+		';
+		if(isset($_POST['enviarRespuesta'])){
+		  if(isset($_SESSION['userid'])){
+		print '<p> Has respondido <p>
+		';
+		$usuario = $_SESSION['userid'];	
+		$respuesta = $_POST['campoRespuesta'];
+		//Obtener la fecha
+		$sqlF = "SELECT DATE(NOW()) AS Fecha";
+		$fecha = mysql_query($sqlF);
+		$sqlH = "SELECT TIMESTAMP(NOW()) AS Hora";
+		$hora = mysql_query($sqlH);
+		
+		//Codigo de inserción
+		$insResp = "INSERT INTO respuesta (idUsuario,Votos,Fecha,Descripcion,Pregunta_idPregunta,Hora)
+		        VALUES ('$usuario','0','$fecha','$respuesta','$id','$hora')";
+		
+		mysql_query($insResp);
+		}
+		else{
+			//Es necesario estar logueado para responder
+			print '<div class="alert alert-danger" role="alert">
+			       <p>Es necesario estar logueado para responder a la pregunta</p>
+				   </div>';			
+		}
+		}
+        //inserto un script para obtener el valor
+        print '<script>
+		  ';
+		print "$('#id').click(function()
+			var id2 = $(this).attr('id');
+		);";  
+		  print  '</script>
+		  ';		
+		//FALTA AUN LAS ACCIONES CUANDO SE DA AL BOTON DE 'VOTAR'
+	    if(isset($_POST['botonVotar'])){
+		 
+		   if(isset($_SESSION['userid'])){
+		      $respuesta = "UPDATE respuesta SET Votos=Votos+1 WHERE idRespuesta=
+		   "
+		   }
+		   else{
+		      print '<div class="alert alert-danger" role="alert">
+			       <p>Es necesario estar logueado para votar a la respuesta</p>
+				   </div>';		   
+		   }		
+		}
+	 
+	 
+	 ?>
+	<footer class="footer" id="footer">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
+	            <ul class="nav navbar-nav brand-left">
+		                <li><a href="#">Quienes Somos</a></li>
+		                <li><a href="#">Contacto</a></li>
+		                <li><a href="#">Trabajar Aqui</a></li>
+		                <li class="dropdown">
+		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                        <span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					            <li><a tabindex="1" href="#">Legal</a></li>
+					            <li><a tabindex="1" href="#">FAQs</a></li>
+					            <li><a tabindex="1" href="#">Ayuda</a></li>
+		                    </ul>
+		                </li>
+		        </ul>
+	        </ul>
+	    </div>
+	</footer>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
 </body>
 </html>	
