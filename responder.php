@@ -248,8 +248,9 @@
 	else{*/	
 	  $id = $_GET["id"];
 	  $sql = "SELECT Titulo,Fecha,Votos,Descripcion,Usuario_idUsuario,Hora FROM pregunta WHERE idPregunta='".$id."'";
+	  $sqlEt = "SELECT Etiqueta_Nombre FROM pregunta_has_etiqueta WHERE Pregunta_idPregunta='".$id."'";
 	  $resmsql = mysqli_query($dbc,$sql) or die ('Consulta fallida: '.mysql_error());
-
+      $resetiq = mysqli_query($dbc,$sqlEt) or die ('Consulta fallida: '.mysql_error());
 	  //Imprimir el titulo
 	  while($res = mysqli_fetch_array($resmsql,MYSQL_ASSOC)){
 	  print '<div class="panel panel-primary">
@@ -273,6 +274,15 @@
 		';
 		break;
 	  }
+	    //Buclecillo de etiquetas
+		while($resEt = mysqli_fetch_array($resetiq,MYSQL_ASSOC)){
+		print '<div class="panel-body">
+		';
+		print '<span class="label label-primary">'.$resEt['Etiqueta_Nombre'].'</span>
+		';		
+		print '</div>
+		';		
+		}
 	  
 		//Buclecillo de respuestas
 		$sql2 = "SELECT idRespuesta,idUsuario,Votos,Fecha,Descripcion FROM respuesta WHERE Pregunta_idPregunta='".$id."'";
