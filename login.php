@@ -2,7 +2,7 @@
     session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\projects\pruebas\DoubtsClass\Sesiones");
 	session_start();
 	$_SESSION["Acceso"] = time();
-	include_once "conexion.php";
+	include_once "./PHP/conexion.php";
 	
 	function verificar_login($usuario,$contra,&$result){
 	   $sql = "SELECT idUsuario,Password FROM usuario WHERE 
