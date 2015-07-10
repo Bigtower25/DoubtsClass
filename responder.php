@@ -17,7 +17,6 @@
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<!--cargar css basico encabezado y footer-->
 	<link rel="stylesheet" type="text/css" href="estilos/bars2.css" media="all">
-	<link rel="stylesheet" type="text/css" href="estilos/login.css" media="all">
 	<link rel="stylesheet" type="text/css" href="estilos/ayuda.css" media="all">
 </head>
 <body>
@@ -231,9 +230,10 @@
 		</div> <!--container-fluid-->
 	</header>
 
-	<div>
-	
-	</div>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<?php
 	/*if(!isset($_SESSION["userid"])){
@@ -319,7 +319,7 @@
 		';
 		print '</div>
 		';
-		print '<button type="submit" name="enviarRespuesta" class="btn btn-default">Enviar</button>
+		print '<button type="submit" name="enviarRespuesta" class="btn-minimal">Enviar</button>
 		';		
 		print '</form>
 		';		

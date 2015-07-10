@@ -9,6 +9,28 @@ margin-top: 2%;
 
 }
 
+	.btn-minimal {
+		border-radius: 0;
+		margin-left:15px;
+		background-color: #4195fc;
+			border: 1px solid rgba(0,0,0,.1);
+			color: rgb(255,255,255);
+
+	}
+	
+		.btn-minimal:hover {
+			background-color: #4195fc;
+			border: 1px solid rgba(0,0,0,.1);
+			color: rgb(255,255,255);
+			cursor: pointer;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+		}
+		
+		.btn-minimal:active {
+			box-shadow: 0 1px 1px rgba(0,0,0,0.15) inset;
+			text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+		}
+
 html{
     position:relative;
     min-height:100%;
