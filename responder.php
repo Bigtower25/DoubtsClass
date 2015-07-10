@@ -23,7 +23,7 @@
     <header class="navbar navbar-inverse navbar-fixed-top" id="nav-small">
         <div class="container-fluid">
             <div class="navbar-header">
-				        <a class="navbar-brand" href="IndexInicial.html">
+				        <a class="navbar-brand" href="IndexInicial.php">
 					        <img src="images/logo_sin_letras.jpg" alt="logo" width="100" height="64">
 				        </a>
 		    </div><!-- navbar-header-->
@@ -68,7 +68,7 @@
 		                    </ul>
 		                </li>
 		                <li class="divider"></li>
-		                <li><a href="RealizarPregunta.html">Realizar Pregunta</a></li>
+		                <li><a href="RealizarPregunta_v2.php">Realizar Pregunta</a></li>
 		                <li class="divider"></li>
 		                <li class="dropdown">
 		                <li>
@@ -105,7 +105,7 @@
 	<header class="navbar navbar-inverse navbar-fixed-top" id="nav">
 		<div class="container-fluid">
 		    <ul class="nav navbar-nav navbar-left">
-		        <li><a href="IndexInicial.html" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
+		        <li><a href="IndexInicial.php" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
 		    </ul>
 			<ul class="nav navbar-nav" id="navbar-search">
 			    <li class="dropdown">
@@ -166,7 +166,7 @@
 		    </ul>      
 
 		    <div class="navbar-header" id="navbar-logo">
-				        <a class="navbar-brand" href="IndexInicial.html">
+				        <a class="navbar-brand" href="IndexInicial.php">
 					        <img src="images/logo_sin_letras.jpg" alt="logo" width="74" height="40" id="logo">
 				        </a>
 		    </div><!-- navbar-header-->
@@ -224,7 +224,7 @@
 				}
 				//if(isset($_POST['logout'])){
 					//session_destroy();
-					//header("Location:IndexInicial.html");
+					//header("Location:IndexInicial.php");
 				//}
 			?>
 		</div> <!--container-fluid-->
@@ -389,7 +389,7 @@
 		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
 					            <li><a tabindex="1" href="PoliticaPrivacidad.html">Legal</a></li>
 					            <li><a tabindex="1" href="FAQs.html">FAQs</a></li>
-					            <li><a tabindex="1" href="IndexInicial.html">Ayuda</a></li>
+					            <li><a tabindex="1" href="IndexInicial.php">Ayuda</a></li>
 		                    </ul>
 		                </li>
 		        </ul>
@@ -418,7 +418,7 @@
 		                        <ul class="dropdown-menu drop-up" id="footer-otros-menu">
 					                <li><a tabindex="1" href="PoliticaPrivacidad.html">Legal</a></li>
 					                <li><a tabindex="1" href="FAQs.html">FAQs</a></li>
-					                <li><a tabindex="1" href="IndexInicial.html">Ayuda</a></li>
+					                <li><a tabindex="1" href="IndexInicial.php">Ayuda</a></li>
 		                        </ul><!--footer-otros-menu-->
 		                </li><!--dropdown otros-->
 		                </ul><!--navbar-left-small-menu-->

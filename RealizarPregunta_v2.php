@@ -1,8 +1,8 @@
 <?php
 	
-	session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\scripts\DoubsClassLocal\Sesiones");
+	session_save_path("./Sesiones");
 	session_start(); //Es obligatorio si quiero mover informacion entre las páginas
-	include_once "conexion.php";
+	include_once "./PHP/conexion.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -69,7 +69,7 @@
 		                    </ul>
 		                </li>
 		                <li class="divider"></li>
-		                <li><a href="RealizarPregunta.html">Realizar Pregunta</a></li>
+		                <li><a href="RealizarPregunta_v2.php">Realizar Pregunta</a></li>
 		                <li class="divider"></li>
 		                <li class="dropdown">
 		                <li>
