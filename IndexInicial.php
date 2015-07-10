@@ -1,6 +1,6 @@
 <?php
 	
-	session_save_path(".\Sesiones");
+	session_save_path("./Sesiones");
 	session_start(); //Es obligatorio si quiero mover informacion entre las páginas
 	include "./PHP/conexion2.php";
 ?>
@@ -196,7 +196,7 @@
 				           </ul>
 				        </li>
 						<ul class="nav navbar-nav brand-right" id="navbar-right">
-						<li><a href="#" id="logout">Logout</a>
+						<li><a href="./PHP/logout.php" id="logout">Logout</a>
 						</li>				
 					</ul>
 					</ul>';
