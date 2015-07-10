@@ -2,7 +2,7 @@
 	
 	session_save_path("./Sesiones");
 	session_start(); //Es obligatorio si quiero mover informacion entre las páginas
-	include_once "./PHP/conexion.php";
+	include "./PHP/conexion2.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,24 +11,21 @@
 	<meta charset="UTF-8">
 	<!--mobile first-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DoubtsClass Realizar Pregunta</title>
+	<title>DoubtsClass</title>
 	<!--cargar bootstrap desde CDN-->
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<!--cargar TinyMCE (editor de texto) desde CDN -->
-	<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
-	<script>tinymce.init({selector:'textarea'});</script>
 	<!--cargar css basico encabezado y footer-->
 	<link rel="stylesheet" type="text/css" href="estilos/bars2.css" media="all">
 	<link rel="stylesheet" type="text/css" href="estilos/login.css" media="all">
+	<link rel="stylesheet" type="text/css" href="estilos/ayuda.css" media="all">
 	<link rel="stylesheet" type="text/css" href="estilos/registro.css" media="all">
-	<link rel="stylesheet" type="text/css" href="estilos/preguntas.css" media="all">
 </head>
 <body>
     <header class="navbar navbar-inverse navbar-fixed-top" id="nav-small">
         <div class="container-fluid">
             <div class="navbar-header">
-				        <a class="navbar-brand" href="#">
-					        <img src="images/logo.jpg" alt="logo" width="100" height="64">
+				        <a class="navbar-brand" href="IndexInicial.php">
+					        <img src="images/logo_sin_letras.jpg" alt="logo" width="100" height="64">
 				        </a>
 		    </div><!-- navbar-header-->
              <ul class="nav navbar-nav brand-right" id="nav-small-right">
@@ -72,7 +69,7 @@
 		                    </ul>
 		                </li>
 		                <li class="divider"></li>
-		                <li><a href="#">Realizar Pregunta</a></li>
+		                <li><a href="RealizarPregunta_v2.php">Realizar Pregunta</a></li>
 		                <li class="divider"></li>
 		                <li class="dropdown">
 		                <li>
@@ -99,7 +96,7 @@
     					        </li>
 				            </ul>
 		                </li>
-		                <li><a href="#">Registro</a></li>
+		                <li><a href="registro.php">Registro</a></li>
 		            </ul>
 		        </li>
 		    </ul>
@@ -107,9 +104,9 @@
     </header>
     
 	<header class="navbar navbar-inverse navbar-fixed-top" id="nav">
-		
+		<div class="container-fluid">
 		    <ul class="nav navbar-nav navbar-left">
-		        <li><a href="#" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
+		        <li><a href="IndexInicial.php" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
 		    </ul>
 			<ul class="nav navbar-nav" id="navbar-search">
 			    <li class="dropdown">
@@ -164,41 +161,77 @@
 		                <li><a href="#">Usuarios</a></li>
 		                <li><a href="#">Sin respuesta</a></li>
 		                <li class="divider"></li>
-		                <li><a href="#">Realizar Pregunta</a></li>
+		                <li><a href="RealizarPregunta_v2.php">Realizar Pregunta</a></li>
 		            </ul>
 		        </li>
 		    </ul>      
 
 		    <div class="navbar-header" id="navbar-logo">
-				        <a class="navbar-brand" href="ayuda.html">
+				        <a class="navbar-brand" href="IndexInicial.php">
 					        <img src="images/logo_sin_letras.jpg" alt="logo" width="74" height="40" id="logo">
 				        </a>
 		    </div><!-- navbar-header-->
 
 		    <ul class="nav navbar-nav brand-right" id="navbar-right">
-		        <li class="bold"><a href="#" id="navbar-realizar_pregunta">Realizar Pregunta
-		            </a></li>
-		        <li class="dropdown">
+		        <li><a href="RealizarPregunta_v2.php" id="navbar-realizar_pregunta"><b>Realizar Pregunta</b></a></li>
+				</ul>
+				<?php
+				if(isset($_SESSION['userid'])){
+					print '
+					<ul class="nav navbar-nav brand-right" id="navbar-right">
+					
+					    <li class="dropdown" id="Logeado">
+		                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="true">						  
+		                   '.$_SESSION['userid'].'
+						   <span class="caret"></span>
+		                  </a>
+		                  <ul class="dropdown-menu">		    
+						       <li><a href="PreferenciasDatosPersonales.html">Datos Personales</a></li>
+							   <li role="separator" class="divider"></li>
+						       <li><a href="PreferenciasPrivacidad.html">Privacidad</a></li>
+							   <li role="separator" class="divider"></li>
+						       <li><a href="PreferenciasCuenta.html">Cuenta</a></li>
+				           </ul>
+				        </li>
+						<ul class="nav navbar-nav brand-right" id="navbar-right">
+						<li><a href="./PHP/logout.php" id="logout">Logout</a>
+						</li>				
+					</ul>
+					</ul>';
+				} else{
+					print' <ul class="nav navbar-nav brand-right" id="navbar-right">
+		        <li id="No logeado" class="dropdown">
 		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
 		            <span class="caret"></span>
 		            </a>
 		            <ul class="dropdown-menu" id="login-menu">				    
-						<form method="post" class="minimal">
+						<form action="./PHP/login.php" method="post" class="minimal">
 							<label for="username">
 							Username:
-								<input type="text" name="username" id="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+								<input type="text" name="username" id="username" required="required" />
 							</label>
 							<label for="password">
 							Password:
-								<input type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+								<input type="password" name="password" id="password" required="required" />
 							</label>
-							<button type="submit" class="btn-minimal">Sign in</button>
+							<button type="submit" name="enviarLogin" class="btn-minimal">Sign in</button>
 						</form>
 				    </ul>
 		        </li>
-		        <li><a href="#">Registro</a></li>
-		    </ul>
+		        <li><a href="registro.html">Registro</a></li>
+		    </ul>';
+				}
+				//if(isset($_POST['logout'])){
+					//session_destroy();
+					//header("Location:IndexInicial.php");
+				//}
+			?>
+		</div> <!--container-fluid-->
 	</header>
+	
+	<br>
+	
 	<section id="formulario">
 	<h2>Realizar Pregunta</h2>
 	<form name="formularioRealizarPregunta" method="post" class="minimal" action="#" >
@@ -216,15 +249,31 @@
 		<div id="seleccion">
 		<select name="Tags" id="Tags">
 			<!--TODO: codigo PHP que haga una consulta a la BBDD y cargue todas las etiquetas-->
-			<option value="1">Aeronaútica</option> 
-			<option value="2">Antropologia</option> 
-			<option value="3">Arqueologia</option>
-			<option value="4">Arquitectura</option>
-			<option value="5">Astronomia</option>
-			<option value="6">Biblioteconomia</option>
-			<option value="7">Biologia</option>
-			<option value="8">Botánica</option>
-			<option value="9">Matematicas</option>
+			<option value="1">Primaria</option>
+			<option value="2">ESO</option>
+			<option value="3">Batchillerato</option>
+			<option value="4">Universidad</option>
+			<option value="5">Aeronaútica</option> 
+			<option value="6">Antropologia</option> 
+			<option value="7">Arqueologia</option>
+			<option value="8">Arquitectura</option>
+			<option value="9">Astronomia</option>
+			<option value="10">Biblioteconomia</option>
+			<option value="11">Biologia</option>
+			<option value="12">Botánica</option>
+			<option value="13">Matematicas</option>
+			<option value="14">Lengua</option>
+			<option value="15">Programacion</option>
+			<option value="16">Sociales</option>
+			<option value="17">Tecnologia</option>
+			<option value="18">Matematicas</option>
+			<option value="19">Web Design</option>
+			<option value="20">Java</option>
+			<option value="21">C</option>
+			<option value="22">Economia</option>
+			<option value="23">Derecho</option>
+			<option value="24">Medicina</option>
+			
 		</select>
 		<button type="button" class="btn-minimal" id="addEtiqueta">Añadir Etiqueta</button>
 		<button type="button" class="btn-minimal" id="clearEtiqueta">Limpiar</button>
@@ -234,23 +283,21 @@
 	</form>
 	</section>
 
-	<br>
-	
 	<footer class="footer" id="footer">
 	    <div class="container-fluid">
 	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
 	            <ul class="nav navbar-nav brand-left">
-		                <li><a href="#">Quienes Somos</a></li>
-		                <li><a href="#">Contacto</a></li>
-		                <li><a href="#">Trabajar Aqui</a></li>
+		                <li><a href="Quienes Somos.html">Quienes Somos</a></li>
+		                <li><a href="Contacto.html">Contacto</a></li>
+		                <li><a href="Trabajar Aqui.html">Trabajar Aqui</a></li>
 		                <li class="dropdown">
 		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
 		                        <span class="caret"></span>
 		                    </a>
 		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
-					            <li><a tabindex="1" href="#">Legal</a></li>
-					            <li><a tabindex="1" href="#">FAQs</a></li>
-					            <li><a tabindex="1" href="#">Ayuda</a></li>
+					            <li><a tabindex="1" href="PoliticaPrivacidad.html">Legal</a></li>
+					            <li><a tabindex="1" href="FAQs.html">FAQs</a></li>
+					            <li><a tabindex="1" href="IndexInicial.php">Ayuda</a></li>
 		                    </ul>
 		                </li>
 		        </ul>
@@ -269,17 +316,17 @@
 			                    <span class="caret" id="navbar-left-small-caret"></span>
 			                </a>
                         <ul class="dropdown-menu" id="navbar-left-small-menu">
-		                    <li><a href="#">Quienes Somos</a></li>
-		                    <li><a href="#">Contacto</a></li>
-		                    <li><a href="#">Trabajar Aqui</a></li>
+		                    <li><a href="Quienes Somos.html">Quienes Somos</a></li>
+		                    <li><a href="Contacto.html">Contacto</a></li>
+		                    <li><a href="Trabajar Aqui.html">Trabajar Aqui</a></li>
 		                    <li class="dropdown">
 		                        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
 		                            <span class="caret"></span>
 		                        </a>
 		                        <ul class="dropdown-menu drop-up" id="footer-otros-menu">
-					                <li><a tabindex="1" href="#">Legal</a></li>
-					                <li><a tabindex="1" href="#">FAQs</a></li>
-					                <li><a tabindex="1" href="#">Ayuda</a></li>
+					                <li><a tabindex="1" href="PoliticaPrivacidad.html">Legal</a></li>
+					                <li><a tabindex="1" href="FAQs.html">FAQs</a></li>
+					                <li><a tabindex="1" href="IndexInicial.php">Ayuda</a></li>
 		                        </ul><!--footer-otros-menu-->
 		                </li><!--dropdown otros-->
 		                </ul><!--navbar-left-small-menu-->
@@ -290,11 +337,13 @@
 	</footer>
 	    <!--[if lt IE 9] para adaptar todos los navegadores a html5-->
 	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<!--carga jquery-->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
-		<script type="text/javascript" src=""></script>
+		<script type="text/javascript">
+			function ocultar(){document.getElementById('ver').style.display = 'none';}
+		</script>
+		
 		<script>
 		$(document).ready(function(){
 			//añade los tags a la pagina web
@@ -343,7 +392,7 @@
 		</script>
 		
 		<?php
-		include_once "conexion.php";
+		//include_once "conexion.php";
 	//Comprobar que el usuario esta logueado
 	if(!isset($_SESSION["userid"])){
 		print("<script>
@@ -372,17 +421,17 @@
 			$etiquetas=explode(",",$vara);
 			
 			//Borrar una vez que funcione
-			print "El string entero es ".$vara;
+			//print "El string entero es ".$vara;
 			for($i=0;$i<count($etiquetas);$i++){
-				print "etiqs ".$etiquetas[$i];
+				//print "etiqs ".$etiquetas[$i];
 			}
 			
-			print 'El usuario es '.$usuario;
+			//print 'El usuario es '.$usuario;
 			
 			$sql = "INSERT INTO `aplicacionesweb`.`pregunta` (`Titulo`,`Fecha`,`Votos`,`Descripcion`,`Usuario_idUsuario`) \n" 
 			       . " VALUES ('$titulo',CURRENT_TIMESTAMP,'','$contenido','$usuario')";
 										
-			$insert = mysql_query($sql) or die (mysql_error());		
+			$insert = mysqli_query($dbc,$sql) or die (mysqli_error());		
 			/*foreach($etiquetas as $eti){
 				<div class="alert alert-success" role="alert" id="bienvenida">
 			        <p>Bienvenido </p><strong>'.$_POST['username'].'</strong>
@@ -392,12 +441,13 @@
 			/*print '<div class=\"alert alert-success\" role=\"alert\">
 				   <p>Has realizado correctamente la pregunta</p>
 				   </div>';*/
-			$id = mysql_query("SELECT MAX(idPregunta) FROM pregunta");
+			$id = mysqli_query($dbc,"SELECT MAX(idPregunta) FROM pregunta");
             
             /*print 'El máximo id es '.$id;*/			
-			for($i=0; $i <count($etiquetas);$i++){	   
+			for($i=0; $i < count($etiquetas);$i++){	   
 				$sql2 = "INSERT INTO `aplicacionesweb`.`pregunta_has_etiqueta`(`Pregunta_idPregunta`,`Etiqueta_Nombre`)\n"
-				        ."VALUES ('$id','$etiquetas[$i]')";
+				        ."VALUES ($id,'$etiquetas[$i]')";
+				$resultado = mysqli_query($dbc,$sql2)or die (mysqli_error());;
 			}
 		    print("<script>
 			      $(document).ready(function(){
