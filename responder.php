@@ -284,7 +284,7 @@
 		}
 	  
 		//Buclecillo de respuestas
-		$sql2 = "SELECT idRespuesta,idUsuario,Votos,Fecha,Descripcion FROM respuesta WHERE Pregunta_idPregunta='".$id."'";
+		$sql2 = "SELECT idRespuesta,idUsuario,Votos,Hora,Descripcion FROM respuesta WHERE Pregunta_idPregunta='".$id."'";
 		//Panel body con las respuestas
 		$res2 = mysqli_query($dbc,$sql2);
 		while($result = mysqli_fetch_array($res2,MYSQL_ASSOC)){
@@ -294,8 +294,8 @@
 		';
 		
 		print     'Respuesta realizada por '.$result['idUsuario'].' ';
-        print     ' El dia '.$result['Fecha'].' ';
-        print   '<span class="badge"> Número de votos '.$result['Votos'].' '.'</span>';
+        print     ' el '.$result['Hora'].' horas ';
+        print   '<span class="badge"> Votos '.$result['Votos'].' '.'</span>';
 		print   ' ';
 		print   ' ';
 		print   ' ';

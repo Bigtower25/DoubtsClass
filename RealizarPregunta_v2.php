@@ -253,7 +253,7 @@
 			<option value="2">ESO</option>
 			<option value="3">Batchillerato</option>
 			<option value="4">Universidad</option>
-			<option value="5">Aeronaútica</option> 
+			<option value="5">Aeronautica</option> 
 			<option value="6">Antropologia</option> 
 			<option value="7">Arqueologia</option>
 			<option value="8">Arquitectura</option>
@@ -449,7 +449,7 @@
 			for($i=0; $i < count($etiquetas);$i++){
 				$aux = $etiquetas[$i];
 				$sql2 = "INSERT INTO pregunta_has_etiqueta (Pregunta_idPregunta,Etiqueta_Nombre) VALUES ($idP,'$aux')";
-				$resultado = mysqli_query($dbc,$sql2)or die (mysqli_error());;
+				$resultado = mysqli_query($dbc,$sql2);
 			}
 		    print("<script>
 			      $(document).ready(function(){
