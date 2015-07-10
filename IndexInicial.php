@@ -2,6 +2,7 @@
 	
 	session_save_path(".\Sesiones");
 	session_start(); //Es obligatorio si quiero mover informacion entre las páginas
+	include "./PHP/conexion2.php";
 ?>
 
 <!DOCTYPE html>
@@ -179,14 +180,11 @@
 				if(isset($_SESSION['userid'])){
 					print '
 					<ul class="nav navbar-nav brand-right" id="navbar-right">
-						<li><a href="#" id="bienvenido">Bienvenido '.$_SESSION['userid'].'</a>
-						</li>				
-					</ul>
-					<ul class="nav navbar-nav brand-right" id="navbar-right">
+					
 					    <li class="dropdown" id="Logeado">
 		                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="true">						  
-		                   Perfil
+		                   '.$_SESSION['userid'].'
 						   <span class="caret"></span>
 		                  </a>
 		                  <ul class="dropdown-menu">		    
@@ -197,6 +195,10 @@
 						       <li><a href="#">Cuenta</a></li>
 				           </ul>
 				        </li>
+						<ul class="nav navbar-nav brand-right" id="navbar-right">
+						<li><a href="#" id="logout">Logout</a>
+						</li>				
+					</ul>
 					</ul>';
 				} else{
 					print' <ul class="nav navbar-nav brand-right" id="navbar-right">
@@ -344,7 +346,62 @@
     </div>
 	</div>
 	
-	
+		<!--LA CHICHA-->
+	<?php
+		//Realizamos una consulta a la bbdd de las últimas preguntas
+		//Imprimimos blockquotes
+	  //Esta consulta me muestra las preguntas hechas hoy. Titulo y Usuario
+	  $sql = 'SELECT Titulo,Fecha,Votos,Descripcion,Usuario_idUsuario,Hora,idPregunta FROM pregunta';
+	  //$sql = 'SELECT Titulo,Fecha,Votos,Descripcion,Usuario_idUsuario,Hora FROM pregunta WHERE idPregunta='.$id;
+	  $res = mysqli_query($dbc,$sql) or die ('Consulta fallida: '.mysql_error());
+	  print'
+	  <div class="container-fluid" id="cuerpo">
+			<section id="preguntas">
+	         Preguntas Recientes
+			 </section>
+			 <p></p>';
+
+			 while($result = mysqli_fetch_array($res,MYSQL_ASSOC)){
+			// echo 'En el bucle';
+			//print 'El valor de resHA es '.$resHA.
+			$horaAux = $result['Hora'];
+			$fecha = $result['Fecha'];
+
+			//Faltan los casos en los que tengan el mismo día y la misma hora
+		print '<div class="panel panel-primary">
+		';
+		print   '<div class="panel-heading">
+		';
+		print     '<a style="color:white;" href="responder.php?id='.$result['idPregunta'].'">';
+		print     '<h3 class="panel-title">'.$result['Titulo'].'</h3></a>
+		';
+		print   '</div>
+		';
+		print   '<div class="panel-body">
+		';
+		/*print     'Realizada por <a href="#">'.$result['Usuario_idUsuario'].'</a> hace '.$interval->format('%a dias').'
+		';*/
+		//Caso en el que se publiquen en dias diferentes
+		
+        print       'Realizada por <a href="#">'.$result['Usuario_idUsuario'].'</a> el '.$horaAux.'
+		';
+				
+		print   '</div>
+		';
+		print '</div>
+		';
+		     }//Fin del while
+	print'</li>
+	    </ul>
+	  </div>';
+ 
+	?>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<!--FIN LA CHICHA-->
 	<footer class="footer" id="footer">
 	    <div class="container-fluid">
 	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
