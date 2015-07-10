@@ -260,15 +260,15 @@
 		';
 		print   '</div>
 		';
-		break;
-	  }
-	  while($res2 = mysqli_fetch_array($resmsql,MYSQL_ASSOC)){
+		//break;
+	  //}
+	  //while($res2 = mysqli_fetch_array($resmsql,MYSQL_ASSOC)){
 		//Panel-body de la descripcion
 		print   '<div class="panel-body">
 		';
 		print    '<ul style background: #DDEEF9" class="list-group-item">
 		';
-		print     $res2['Descripcion'].'<span class="badge">Numero de votos '.$res2['Votos'].'</span>
+		print     $res['Descripcion'].'<span class="badge">Numero de votos '.$res['Votos'].'</span>
 		';	
         print    '</ul>
 		';		 	
@@ -288,8 +288,11 @@
 		';
 		
 		print     'Respuesta realizada por '.$result['idUsuario'].' ';
-        print     ' El dia '.$result['Fecha'];
-        print   '<span class="badge"> Número de votos '.$result['Votos'].'</span>';
+        print     ' El dia '.$result['Fecha'].' ';
+        print   '<span class="badge"> Número de votos '.$result['Votos'].' '.'</span>';
+		print   ' ';
+		print   ' ';
+		print   ' ';
         print   '<button type="button" name="botonVotar" id='.$result['idRespuesta'].'class="btn btn-default btn-lg">';
         print       '<i class="fa fa-hand-o-up">Votar</i>';
         print   '</button>';		
@@ -309,11 +312,13 @@
 		';
         //print '<div class="panel panel-primary"></div>';	
 		}
+		print '<br>';
+
 		print '<form method="post">
 		';
 		print '<div class="form-group">
 		';
-		print   '<label for="escribirPregunta">Responder</label>
+		print   '<label for="escribirPregunta"> Responder</label>
 		';
 		print   '<input type="text" name="campoRespuesta" class="form-control" placeholder="Escribe aqui tu respuesta">
 		';
@@ -325,8 +330,21 @@
 		';		
 	    print '</div>
 		';
+		print '<br>
+		';
 		if(isset($_POST['enviarRespuesta'])){
-		  if(isset($_SESSION['userid'])){
+		 if(!(isset($_SESSION['userid']))){
+			//Es necesario estar logueado para responder
+			print '<div class="alert alert-danger" role="alert">
+			       <p>Es necesario estar logueado para responder a la pregunta</p>
+				   </div>
+				   <br>
+				   <br>
+				   <br>';
+                        				   
+			}
+		 else
+		{
 		print '<p> Has respondido <p>
 		';
 		$usuario = $_SESSION['userid'];	
@@ -342,12 +360,6 @@
 		        VALUES ('$usuario','0','$fecha','$respuesta','$id','$hora')";
 		
 		mysqli_query($dbc,$insResp);
-		}
-		else{
-			//Es necesario estar logueado para responder
-			print '<div class="alert alert-danger" role="alert">
-			       <p>Es necesario estar logueado para responder a la pregunta</p>
-				   </div>';			
 		}
 		}
         //inserto un script para obtener el valor
