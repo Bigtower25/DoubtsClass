@@ -374,7 +374,8 @@
 		$insResp = "INSERT INTO respuesta (idUsuario,Votos,Descripcion,Pregunta_idPregunta,Hora)
 		        VALUES ('$usuario','0','$respuesta',$id,CURRENT_TIMESTAMP)";
 		
-		mysqli_query($dbc,$insResp);
+		if(mysqli_query($dbc,$insResp)){
+		echo '<meta http-equiv="refresh" content="0.1" />';}
 		}
 		}
         //inserto un script para obtener el valor
