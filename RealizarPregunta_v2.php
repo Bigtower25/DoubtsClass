@@ -442,11 +442,13 @@
 				   <p>Has realizado correctamente la pregunta</p>
 				   </div>';*/
 			$id = mysqli_query($dbc,"SELECT MAX(idPregunta) FROM pregunta");
+			$row = mysqli_fetch_array($id, MYSQLI_NUM);
+			$idP = $row[0];
             
             /*print 'El máximo id es '.$id;*/			
-			for($i=0; $i < count($etiquetas);$i++){	   
-				$sql2 = "INSERT INTO `aplicacionesweb`.`pregunta_has_etiqueta`(`Pregunta_idPregunta`,`Etiqueta_Nombre`)\n"
-				        ."VALUES ($id,'$etiquetas[$i]')";
+			for($i=0; $i < count($etiquetas);$i++){
+				$aux = $etiquetas[$i];
+				$sql2 = "INSERT INTO pregunta_has_etiqueta (Pregunta_idPregunta,Etiqueta_Nombre) VALUES ($idP,'$aux')";
 				$resultado = mysqli_query($dbc,$sql2)or die (mysqli_error());;
 			}
 		    print("<script>
