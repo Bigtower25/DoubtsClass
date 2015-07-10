@@ -343,6 +343,10 @@
 		';
 		print '<br>
 		';
+		print '<br>
+		';
+		print '<br>
+		';
 		if(isset($_POST['enviarRespuesta'])){
 		 if(!(isset($_SESSION['userid']))){
 			//Es necesario estar logueado para responder
