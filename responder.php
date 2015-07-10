@@ -260,10 +260,7 @@
 		';
 		print   '</div>
 		';
-		//break;
-	  //}
-	  //while($res2 = mysqli_fetch_array($resmsql,MYSQL_ASSOC)){
-		//Panel-body de la descripcion
+	    
 		print   '<div class="panel-body">
 		';
 		print    '<ul style background: #DDEEF9" class="list-group-item">
@@ -325,7 +322,11 @@
 		print '</div>
 		';
 		print '<button type="submit" name="enviarRespuesta" class="btn-minimal">Enviar</button>
-		';		
+		';	
+        print '<br>
+        ';
+        print '<br>
+        ';		
 		print '</form>
 		';		
 	    print '</div>
@@ -382,9 +383,7 @@
 			       <p>Es necesario estar logueado para votar a la respuesta</p>
 				   </div>';		   
 		   }		
-		}
-	 
-	 
+		}	 
 	 ?>	
 	
 	<footer class="footer" id="footer">
