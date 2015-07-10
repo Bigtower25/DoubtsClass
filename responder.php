@@ -266,9 +266,7 @@
 		';
 		print    '<ul style background: #DDEEF9" class="list-group-item">
 		';
-		print     $res['Descripcion']
-		/*.'<span class="badge">Numero de votos '.$res['Votos'].'</span>*/
-		';	
+		print     $res['Descripcion'];	
         print    '</ul>
 		';		 	
 		print   '</div>
@@ -361,19 +359,20 @@
 			}
 		 else
 		{
-		print '<p> Has respondido <p>
-		';
+		//print '<p> Has respondido <p>';
+		
 		$usuario = $_SESSION['userid'];	
 		$respuesta = $_POST['campoRespuesta'];
 		//Obtener la fecha
-		$sqlF = "SELECT DATE(NOW()) AS Fecha";
-		$fecha = mysqli_query($dbc,$sqlF);
+		
 		$sqlH = "SELECT TIMESTAMP(NOW()) AS Hora";
 		$hora = mysqli_query($dbc,$sqlH);
+		$row = mysqli_fetch_array($hora, MYSQLI_NUM);
+		$horaResp = $row[0];
 		
 		//Codigo de inserción
-		$insResp = "INSERT INTO respuesta (idUsuario,Votos,Fecha,Descripcion,Pregunta_idPregunta,Hora)
-		        VALUES ('$usuario','0','$fecha','$respuesta','$id','$hora')";
+		$insResp = "INSERT INTO respuesta (idUsuario,Votos,Descripcion,Pregunta_idPregunta,Hora)
+		        VALUES ('$usuario','0','$respuesta',$id,CURRENT_TIMESTAMP)";
 		
 		mysqli_query($dbc,$insResp);
 		}

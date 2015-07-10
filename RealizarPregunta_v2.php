@@ -429,7 +429,7 @@
 			//print 'El usuario es '.$usuario;
 			
 			$sql = "INSERT INTO `aplicacionesweb`.`pregunta` (`Titulo`,`Hora`,`Votos`,`Descripcion`,`Usuario_idUsuario`) \n" 
-			       . " VALUES ('$titulo',CURRENT_TIMESTAMP,'','$contenido','$usuario')";
+			       . " VALUES ('$titulo',CURRENT_TIMESTAMP,'0','$contenido','$usuario')";
 										
 			$insert = mysqli_query($dbc,$sql) or die (mysqli_error());		
 			/*foreach($etiquetas as $eti){
