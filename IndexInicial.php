@@ -1,3 +1,9 @@
+<?php
+	
+	session_save_path(".\Sesiones");
+	session_start(); //Es obligatorio si quiero mover informacion entre las páginas
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -168,12 +174,38 @@
 		    <ul class="nav navbar-nav brand-right" id="navbar-right">
 		        <li><a href="RealizarPregunta.html" id="navbar-realizar_pregunta">Realizar Pregunta
 		            </a></li>
+				</ul>
+				<?php
+				if(isset($_SESSION['userid'])){
+					print '
+					<ul class="nav navbar-nav brand-right" id="navbar-right">
+						<li><a href="#" id="bienvenido">Bienvenido '.$_SESSION['userid'].'</a>
+						</li>				
+					</ul>
+					<ul class="nav navbar-nav brand-right" id="navbar-right">
+					    <li class="dropdown" id="Logeado">
+		                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="true">						  
+		                   Perfil
+						   <span class="caret"></span>
+		                  </a>
+		                  <ul class="dropdown-menu">		    
+						       <li><a href="#">Datos Personales</a></li>
+							   <li role="separator" class="divider"></li>
+						       <li><a href="#">Privacidad</a></li>
+							   <li role="separator" class="divider"></li>
+						       <li><a href="#">Cuenta</a></li>
+				           </ul>
+				        </li>
+					</ul>';
+				} else{
+					print' <ul class="nav navbar-nav brand-right" id="navbar-right">
 		        <li id="No logeado" class="dropdown">
 		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
 		            <span class="caret"></span>
 		            </a>
 		            <ul class="dropdown-menu" id="login-menu">				    
-						<form action="login.php" method="post" class="minimal">
+						<form action="./PHP/login.php" method="post" class="minimal">
 							<label for="username">
 							Username:
 								<input type="text" name="username" id="username" required="required" />
@@ -187,8 +219,13 @@
 				    </ul>
 		        </li>
 		        <li><a href="registro.html">Registro</a></li>
-		    </ul>
-
+		    </ul>';
+				}
+				//if(isset($_POST['logout'])){
+					//session_destroy();
+					//header("Location:IndexInicial.html");
+				//}
+			?>
 		</div> <!--container-fluid-->
 	</header>
 	
