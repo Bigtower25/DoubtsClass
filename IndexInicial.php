@@ -188,11 +188,11 @@
 						   <span class="caret"></span>
 		                  </a>
 		                  <ul class="dropdown-menu">		    
-						       <li><a href="#">Datos Personales</a></li>
+						       <li><a href="PreferenciasDatosPersonales.html">Datos Personales</a></li>
 							   <li role="separator" class="divider"></li>
-						       <li><a href="#">Privacidad</a></li>
+						       <li><a href="PreferenciasPrivacidad.html">Privacidad</a></li>
 							   <li role="separator" class="divider"></li>
-						       <li><a href="#">Cuenta</a></li>
+						       <li><a href="PreferenciasCuenta.html">Cuenta</a></li>
 				           </ul>
 				        </li>
 						<ul class="nav navbar-nav brand-right" id="navbar-right">
