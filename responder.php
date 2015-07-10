@@ -266,7 +266,8 @@
 		';
 		print    '<ul style background: #DDEEF9" class="list-group-item">
 		';
-		print     $res['Descripcion'].'<span class="badge">Numero de votos '.$res['Votos'].'</span>
+		print     $res['Descripcion']
+		/*.'<span class="badge">Numero de votos '.$res['Votos'].'</span>*/
 		';	
         print    '</ul>
 		';		 	
