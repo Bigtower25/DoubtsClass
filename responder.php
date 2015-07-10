@@ -1,9 +1,10 @@
 <?php
-   session_save_path("C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\scripts\DoubsClassLocal\Sesiones");
+   session_save_path("./Sesiones");
    session_start(); //Es obligatorio si quiero mover informacion entre las páginas
-   include_once "conexion.php";
-   include_once "login.php";
+   include "./PHP/conexion2.php";
+   include "./PHP/login.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 	<meta charset="UTF-8">
 	<!--mobile first-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DoubtsClass Responder</title>
+	<title>DoubtsClass</title>
 	<!--cargar bootstrap desde CDN-->
 	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<!--cargar css basico encabezado y footer-->
@@ -23,8 +24,8 @@
     <header class="navbar navbar-inverse navbar-fixed-top" id="nav-small">
         <div class="container-fluid">
             <div class="navbar-header">
-				        <a class="navbar-brand" href="#">
-					        <img src="images/logo.jpg" alt="logo" width="100" height="64">
+				        <a class="navbar-brand" href="IndexInicial.html">
+					        <img src="images/logo_sin_letras.jpg" alt="logo" width="100" height="64">
 				        </a>
 		    </div><!-- navbar-header-->
              <ul class="nav navbar-nav brand-right" id="nav-small-right">
@@ -68,7 +69,7 @@
 		                    </ul>
 		                </li>
 		                <li class="divider"></li>
-		                <li><a href="#">Realizar Pregunta</a></li>
+		                <li><a href="RealizarPregunta.html">Realizar Pregunta</a></li>
 		                <li class="divider"></li>
 		                <li class="dropdown">
 		                <li>
@@ -105,7 +106,7 @@
 	<header class="navbar navbar-inverse navbar-fixed-top" id="nav">
 		<div class="container-fluid">
 		    <ul class="nav navbar-nav navbar-left">
-		        <li><a href="#" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
+		        <li><a href="IndexInicial.html" style="color:white;font-size:18px;position:relative;paddingleft:5px;padding-right:5px">Doubts Class</a></li>
 		    </ul>
 			<ul class="nav navbar-nav" id="navbar-search">
 			    <li class="dropdown">
@@ -160,56 +161,80 @@
 		                <li><a href="#">Usuarios</a></li>
 		                <li><a href="#">Sin respuesta</a></li>
 		                <li class="divider"></li>
-		                <li><a href="#">Realizar Pregunta</a></li>
+		                <li><a href="RealizarPregunta.html">Realizar Pregunta</a></li>
 		            </ul>
 		        </li>
 		    </ul>      
 
 		    <div class="navbar-header" id="navbar-logo">
-				        <a class="navbar-brand" href="#">
+				        <a class="navbar-brand" href="IndexInicial.html">
 					        <img src="images/logo_sin_letras.jpg" alt="logo" width="74" height="40" id="logo">
 				        </a>
 		    </div><!-- navbar-header-->
 
 		    <ul class="nav navbar-nav brand-right" id="navbar-right">
-		        <li><a href="#" id="navbar-realizar_pregunta">Realizar Pregunta
+		        <li><a href="RealizarPregunta.html" id="navbar-realizar_pregunta">Realizar Pregunta
 		            </a></li>
+				</ul>
+				<?php
+				if(isset($_SESSION['userid'])){
+					print '
+					<ul class="nav navbar-nav brand-right" id="navbar-right">
+					
+					    <li class="dropdown" id="Logeado">
+		                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="true">						  
+		                   '.$_SESSION['userid'].'
+						   <span class="caret"></span>
+		                  </a>
+		                  <ul class="dropdown-menu">		    
+						       <li><a href="PreferenciasDatosPersonales.html">Datos Personales</a></li>
+							   <li role="separator" class="divider"></li>
+						       <li><a href="PreferenciasPrivacidad.html">Privacidad</a></li>
+							   <li role="separator" class="divider"></li>
+						       <li><a href="PreferenciasCuenta.html">Cuenta</a></li>
+				           </ul>
+				        </li>
+						<ul class="nav navbar-nav brand-right" id="navbar-right">
+						<li><a href="#" id="logout">Logout</a>
+						</li>				
+					</ul>
+					</ul>';
+				} else{
+					print' <ul class="nav navbar-nav brand-right" id="navbar-right">
 		        <li id="No logeado" class="dropdown">
 		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Login
 		            <span class="caret"></span>
 		            </a>
 		            <ul class="dropdown-menu" id="login-menu">				    
-						<form action="login.php" method="post" class="minimal">
+						<form action="./PHP/login.php" method="post" class="minimal">
 							<label for="username">
 							Username:
-								<input type="text" name="username" id="username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required" />
+								<input type="text" name="username" id="username" required="required" />
 							</label>
 							<label for="password">
 							Password:
-								<input type="password" name="password" id="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required="required" />
+								<input type="password" name="password" id="password" required="required" />
 							</label>
 							<button type="submit" name="enviarLogin" class="btn-minimal">Sign in</button>
 						</form>
 				    </ul>
 		        </li>
-				<li id="Logeado" class="dropdown">
-		            <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Perfil
-		            <span class="caret"></span>
-		            </a>
-		            <ul class="dropdown-menu" id="login-menu">				    
-						<li><a href="#">Datos Personales</a></li>
-						<li><a href="#">Privacidad</a></li>
-						<li><a href="#">Cuenta</a></li>
-				    </ul>
-		        </li>
-		        <li><a href="registro.php">Registro</a></li>
-		    </ul>
-
+		        <li><a href="registro.html">Registro</a></li>
+		    </ul>';
+				}
+				//if(isset($_POST['logout'])){
+					//session_destroy();
+					//header("Location:IndexInicial.html");
+				//}
+			?>
 		</div> <!--container-fluid-->
 	</header>
+
 	<div>
 	
 	</div>
+
 	<?php
 	/*if(!isset($_SESSION["userid"])){
 		print("<script>
@@ -223,11 +248,10 @@
 	else{*/	
 	  $id = $_GET["id"];
 	  $sql = "SELECT Titulo,Fecha,Votos,Descripcion,Usuario_idUsuario,Hora FROM pregunta WHERE idPregunta='".$id."'";
-	  $resmsql = mysql_query($sql) or die ('Consulta fallida: '.mysql_error());
-	  $horaActual = 'SELECT TIMESTAMP(NOW());';
-	  $resHA = mysql_query($horaActual);
+	  $resmsql = mysqli_query($dbc,$sql) or die ('Consulta fallida: '.mysql_error());
+
 	  //Imprimir el titulo
-	  while($res = mysql_fetch_array($resmsql,MYSQL_ASSOC)){
+	  while($res = mysqli_fetch_array($resmsql,MYSQL_ASSOC)){
 	  print '<div class="panel panel-primary">
 		';
 		print   '<div class="panel-heading">
@@ -238,7 +262,7 @@
 		';
 		break;
 	  }
-	  while($res2 = mysql_fetch_array($resmsql,MYSQL_ASSOC)){
+	  while($res2 = mysqli_fetch_array($resmsql,MYSQL_ASSOC)){
 		//Panel-body de la descripcion
 		print   '<div class="panel-body">
 		';
@@ -256,8 +280,8 @@
 		//Buclecillo de respuestas
 		$sql2 = "SELECT idRespuesta,idUsuario,Votos,Fecha,Descripcion FROM respuesta WHERE Pregunta_idPregunta='".$id."'";
 		//Panel body con las respuestas
-		$res2 = mysql_query($sql2);
-		while($result = mysql_fetch_array($res2,MYSQL_ASSOC)){
+		$res2 = mysqli_query($dbc,$sql2);
+		while($result = mysqli_fetch_array($res2,MYSQL_ASSOC)){
 		print   '<div class="panel-body">
 		';
 		print     '<ul class"list-group-item">
@@ -309,15 +333,15 @@
 		$respuesta = $_POST['campoRespuesta'];
 		//Obtener la fecha
 		$sqlF = "SELECT DATE(NOW()) AS Fecha";
-		$fecha = mysql_query($sqlF);
+		$fecha = mysqli_query($dbc,$sqlF);
 		$sqlH = "SELECT TIMESTAMP(NOW()) AS Hora";
-		$hora = mysql_query($sqlH);
+		$hora = mysqli_query($dbc,$sqlH);
 		
 		//Codigo de inserción
 		$insResp = "INSERT INTO respuesta (idUsuario,Votos,Fecha,Descripcion,Pregunta_idPregunta,Hora)
 		        VALUES ('$usuario','0','$fecha','$respuesta','$id','$hora')";
 		
-		mysql_query($insResp);
+		mysqli_query($dbc,$insResp);
 		}
 		else{
 			//Es necesario estar logueado para responder
@@ -339,7 +363,7 @@
 		 
 		   if(isset($_SESSION['userid'])){
 		      $respuesta = "UPDATE respuesta SET Votos=Votos+1 WHERE idRespuesta=
-		   "
+		   ";
 		   }
 		   else{
 		      print '<div class="alert alert-danger" role="alert">
@@ -349,31 +373,68 @@
 		}
 	 
 	 
-	 ?>
+	 ?>	
+	
 	<footer class="footer" id="footer">
 	    <div class="container-fluid">
 	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom">
 	            <ul class="nav navbar-nav brand-left">
-		                <li><a href="#">Quienes Somos</a></li>
-		                <li><a href="#">Contacto</a></li>
-		                <li><a href="#">Trabajar Aqui</a></li>
+		                <li><a href="Quienes Somos.html">Quienes Somos</a></li>
+		                <li><a href="Contacto.html">Contacto</a></li>
+		                <li><a href="Trabajar Aqui.html">Trabajar Aqui</a></li>
 		                <li class="dropdown">
 		                    <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
 		                        <span class="caret"></span>
 		                    </a>
 		                    <ul class="dropdown-menu drop-up" id="footer-otros-menu">
-					            <li><a tabindex="1" href="#">Legal</a></li>
-					            <li><a tabindex="1" href="#">FAQs</a></li>
-					            <li><a tabindex="1" href="#">Ayuda</a></li>
+					            <li><a tabindex="1" href="PoliticaPrivacidad.html">Legal</a></li>
+					            <li><a tabindex="1" href="FAQs.html">FAQs</a></li>
+					            <li><a tabindex="1" href="IndexInicial.html">Ayuda</a></li>
 		                    </ul>
 		                </li>
 		        </ul>
 	        </ul>
 	    </div>
 	</footer>
+	
+	
+	<footer class="footer" id="footer-small">
+	    <div class="container-fluid">
+	            <ul class="nav navbar navbar-inverse navbar-fixed-bottom" id="navbar-bottom-small">
+	                <ul class="nav navbar-nav" id="footer-nav">
+	                    <li class="dropdown">
+			                <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">
+			                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> 
+			                    <span class="caret" id="navbar-left-small-caret"></span>
+			                </a>
+                        <ul class="dropdown-menu" id="navbar-left-small-menu">
+		                    <li><a href="Quienes Somos.html">Quienes Somos</a></li>
+		                    <li><a href="Contacto.html">Contacto</a></li>
+		                    <li><a href="Trabajar Aqui.html">Trabajar Aqui</a></li>
+		                    <li class="dropdown">
+		                        <a href="#" data-hover="dropdown" data-delay="1000" data-close-others="false">Otros
+		                            <span class="caret"></span>
+		                        </a>
+		                        <ul class="dropdown-menu drop-up" id="footer-otros-menu">
+					                <li><a tabindex="1" href="PoliticaPrivacidad.html">Legal</a></li>
+					                <li><a tabindex="1" href="FAQs.html">FAQs</a></li>
+					                <li><a tabindex="1" href="IndexInicial.html">Ayuda</a></li>
+		                        </ul><!--footer-otros-menu-->
+		                </li><!--dropdown otros-->
+		                </ul><!--navbar-left-small-menu-->
+		                </li>
+		            </ul>
+	            </ul>
+	    </div>
+	</footer>
+	    <!--[if lt IE 9] para adaptar todos los navegadores a html5-->
 	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="https://dl.dropboxusercontent.com/u/64804488/bootstrap-hover-dropdown.min.js"></script>
+		<script type="text/javascript">
+			function ocultar(){document.getElementById('ver').style.display = 'none';}
+		</script>
+		
 </body>
-</html>	
+</html>

@@ -383,7 +383,7 @@
 		';*/
 		//Caso en el que se publiquen en dias diferentes
 		
-        print       'Realizada por <a href="#">'.$result['Usuario_idUsuario'].'</a> el '.$horaAux.'
+        print       'Realizada por <a href="#">'.$result['Usuario_idUsuario'].'</a> el '.$horaAux.' horas
 		';
 				
 		print   '</div>
