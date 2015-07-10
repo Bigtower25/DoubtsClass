@@ -454,7 +454,7 @@
 		    print("<script>
 			      $(document).ready(function(){
 			      $('body').after('<div class=\"alert alert-success\" role=\"alert\" ");
-	        print("><strong><p>Has realizado correctamente la pregunta</p></strong></div>');}
+	        print("><strong><p>Has realizado correctamente la pregunta</p></strong><br><br><br></div>');}
 		     );");
 		    print ("
 		    </script>");
