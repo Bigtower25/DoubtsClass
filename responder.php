@@ -2,7 +2,7 @@
    session_save_path("./Sesiones");
    session_start(); //Es obligatorio si quiero mover informacion entre las páginas
    include "./PHP/conexion2.php";
-   include "./PHP/login.php";
+   //include "./PHP/login.php";
 ?>
 
 <!DOCTYPE html>
@@ -315,7 +315,7 @@
 		';
 		print   '<label for="escribirPregunta">Responder</label>
 		';
-		print   '<input type="text" name="campoRespuesta" class="form-control" placeholder="Escribe aquí tu respuesta">
+		print   '<input type="text" name="campoRespuesta" class="form-control" placeholder="Escribe aqui tu respuesta">
 		';
 		print '</div>
 		';
