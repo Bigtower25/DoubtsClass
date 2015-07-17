@@ -35,7 +35,7 @@ require_once('conexion2.php');
 			 VALUES ('$usuario','$nombre','$apellido1','$apellido2','$contrasenia','$localizacion','$email','$biografia')";
 			 
 			 $respuesta = mysqli_query($dbc,$sql2);
-			 header('Location: ../IndexInicial.html');
+			 header('Location: ../IndexInicial.php');
 			 
 		  }
 		  else{
